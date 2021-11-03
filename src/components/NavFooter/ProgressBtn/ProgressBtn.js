@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './ProgressBtn.module.scss'
 
 export default function ProgressBtn() {
     return (
-        <div>
+        <div className={styles.wrapper}>
             <i>ProgressBtn</i>
         </div>
     )
