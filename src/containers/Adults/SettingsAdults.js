@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DropDown, LogOut, AddUser } from '../../components/Settings/'
+import { DropDown, LogOut, AddUser } from '../../components/Settings'
 
 export default function SettingsAdults() {
     return (
