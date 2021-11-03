@@ -1,29 +1,57 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavFooterAdults from '../containers/Adults/NavFooterAdults'
 import SettingsAdults from '../containers/Adults/SettingsAdults'
 import TotalSavingsAdults from '../containers/Adults/TotalSavingsAdults'
 import SavingGoalAdults from '../containers/Adults/SavingGoalAdults'
 
 export default function Adults({dbAccount, dbParent, dbChildren}) {
-    console.log("children from db:", dbChildren.children);
-    console.log("parents from db:", dbParent.parents);
-    console.log("accounts from db:", dbAccount.accounts);
 
-    //NOTE mockedIds: 
-    let clickedAccountId = 1;
-    let clickedChildId = 1;
+    //NOTE expect accountId from login ok? 
+    const [loginAccountId, setLoginAccountId] = useState(1);
 
-    // map():
-    console.log("map() dbAccount.accounts, and if dbAccount.accounts.accountId === clickedAccountId => dbAccount.accounts.childId -> collect all childId in an array for that accountId", dbAccount.accounts);
+    const [clickedChildObj, setClickedChildObj] = useState({});
+
+    const [showChildProfile, setShowChildProfile] = useState(false);
 
 
+    const handleClick = (evt) => {
+        // setClickedChildId(evt.target.id);
+        // setClickedChildUserName(evt.target.value);
+        setShowChildProfile(true);
 
 
+        //Save clickedChildInfo:
+        //NOTE if === => not working :( 
+        const isChildId = (child) => {
+            return child.childId == evt.target.id;
+        };
+        setClickedChildObj(dbChildren.children.find(isChildId));
+
+        console.log("klick child");
+    };
+    
     return (
-        <div>
+        <div id="adultsContainer">
             <SettingsAdults />
-            <SavingGoalAdults />
-            <TotalSavingsAdults balance={dbChildren.children.balance}/>
+
+            {/* prints childBtns: */}
+            {
+                dbChildren.children.map( (child, index) => child.accountId === loginAccountId ? 
+                <button id={child.childId} key={index} value={child.userName}onClick={handleClick}>{child.userName}</button>
+                : "")
+            }   
+
+            {showChildProfile ? 
+               <>
+                <h2>{clickedChildObj.userName}</h2>
+                <SavingGoalAdults clickedChildObj={clickedChildObj}/>
+                <TotalSavingsAdults clickedChildObj={clickedChildObj}/>
+               </>
+            : ""}
+
+
+
+           
             <NavFooterAdults />
         </div>
     )
