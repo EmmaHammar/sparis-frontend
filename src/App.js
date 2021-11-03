@@ -7,6 +7,7 @@ import Home from './pages/Home';
 
 function App() {
 
+  // should be in in plural i.e. dbAccounts, dbParents?
   const [dbAccount, setDbAccount] = useState({
 
     "accounts": [
@@ -20,7 +21,8 @@ function App() {
 
   const [dbChildren, setDbChildren] = useState({
 
-    "children": [
+    //NOTE should be an object (not array?) since we want to reach keys through dbChildren.children.balance?
+    "children": 
       {
         "accountId": 1,
         "childId": 1,
@@ -32,7 +34,7 @@ function App() {
         "goalAmount": 500,
         "goalPic": "https://www.kalaskungen.com/pub_images/original/PA424.jpg"
       }
-    ]
+    
   })
 
   const [dbParent, setDbParent] = useState({
@@ -53,6 +55,7 @@ function App() {
   })
 
 
+  console.log("dbChildren", dbChildren);
 
   return (
 
