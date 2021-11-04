@@ -1,11 +1,12 @@
 
 import React from 'react'
+import styles from './DeleteSavingGoal.module.scss'
 
 export default function DeleteSavingGoal() {
     return (
-        <div>
+        <div className={styles.wrapper}>
             <i>DeleteSavingGoal</i>
-            <i>DeleteSavingGoal2</i>
+           
 
 
         </div>

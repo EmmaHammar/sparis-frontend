@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './NoSavingGoal.module.scss'
 
 export default function NoSavingGoal() {
     return (
-        <div id="noSavingGoalContainer">
+        <div className={styles.wrapper} id="noSavingGoalContainer">
             <i>NoSavingGoal</i>
             <h3>Du har inga sparmål.</h3>
             <p>Visa tom bild/kamera</p>
