@@ -59,7 +59,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home dbParent={dbParent} dbChildren={dbChildren}/>
         </Route>
         <Route exact path="/Children">
           <Children dbAccount={dbAccount} dbChildren={dbChildren}/>
