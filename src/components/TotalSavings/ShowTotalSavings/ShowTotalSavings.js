@@ -5,6 +5,7 @@ export default function ShowTotalSavings({balance}) {
     // console.log("balance in ShowTotalSavings:", balance);
     
 
+
     return (
         <div className={styles.wrapper}>
             <i>ShowTotalSavings</i>
