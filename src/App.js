@@ -7,6 +7,9 @@ import Home from './pages/Home';
 
 function App() {
 
+  // should be in in plural i.e. dbAccounts, dbParents? 
+  // props should be dbAccounts.accounts, dbChildren.children, dbParents.parents??
+  
   const [isloading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -28,20 +31,43 @@ function App() {
 
   const [dbChildren, setDbChildren] = useState({
 
-    "children": [
-      {
-        "accountId": 1,
-        "childId": 1,
-        "userName": "theo",
-        "password": "testtheo",
-        "pocketMoney": 30,
-        "balance": 100,
-        "goalTitle": "MineCraft",
-        "goalAmount": 500,
-        "goalPic": "https://www.kalaskungen.com/pub_images/original/PA424.jpg"
-      }
-    ]
-  })
+    "children": 
+      [
+        {
+          "accountId": 1,
+          "childId": 1,
+          "userName": "theo",
+          "password": "testtheo",
+          "pocketMoney": 30,
+          "balance": 100,
+          "goalTitle": "MineCraft",
+          "goalAmount": 50,
+          "goalPic": "https://www.kalaskungen.com/pub_images/original/PA424.jpg"
+        },
+        {
+          "accountId": 1,
+          "childId": 2,
+          "userName": "maxine",
+          "password": "testmaxine",
+          "pocketMoney": 30,
+          "balance": 200,
+          "goalTitle": "",
+          "goalAmount": 0,
+          "goalPic": ""
+        },
+        {
+          "accountId": 2,
+          "childId": 3,
+          "userName": "vera",
+          "password": "testvera",
+          "pocketMoney": 50,
+          "balance": 500,
+          "goalTitle": "",
+          "goalAmount": 0,
+          "goalPic": ""
+        }
+      ]
+  });
 
   const [dbParent, setDbParent] = useState({
 
