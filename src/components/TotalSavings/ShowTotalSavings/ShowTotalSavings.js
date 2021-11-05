@@ -6,7 +6,7 @@ export default function ShowTotalSavings({balance}) {
     return (
         <div className={styles.wrapper}>
             <i>ShowTotalSavings</i>
-            <p>{balance} kr</p>
+            <h3 className={styles.showBalance}>{balance} kr</h3>
             <p>bild sparis</p>
         </div>
     )
