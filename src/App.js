@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loader from './components/Loader/Loader';
 import Adults from './pages/Adults';
@@ -11,6 +11,13 @@ function App() {
   // props should be dbAccounts.accounts, dbChildren.children, dbParents.parents??
 
   
+  const [isloading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 3500)
+  })
 
   const [dbAccount, setDbAccount] = useState({
 
@@ -82,19 +89,25 @@ function App() {
 
   return (
 
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/Children">
-          <Children dbAccount={dbAccount} dbChildren={dbChildren}/>
-        </Route>
-        <Route exact path="/Adults">
-          <Adults dbAccount={dbAccount} dbParent={dbParent} dbChildren={dbChildren}/>
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      {isloading ? <Loader /> :
+        <Router>
+          <Switch>
+            <Route exact path="/">
+            <Home dbParent={dbParent} dbChildren={dbChildren}/>
+            </Route>
+            <Route exact path="/Children">
+              <Children dbAccount={dbAccount} dbChildren={dbChildren} />
+            </Route>
+            <Route exact path="/Adults">
+              <Adults dbAccount={dbAccount} dbParent={dbParent} dbChildren={dbChildren} />
+            </Route>
+          </Switch>
+        </Router>
+      }
+
+    </>
+
   );
 }
 
