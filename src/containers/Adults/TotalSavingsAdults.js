@@ -5,8 +5,10 @@ import { ShowTotalSavings, ChangeTotalSavings, MinusTotalSavings, PlusTotalSavin
 export default function TotalSavingsAdults({clickedChildObj}) {
 
     const [balance, setBalance] = useState(clickedChildObj.balance);
-    const [newBalance, setNewBalance] = useState(balance);
+    // const [newBalance, setNewBalance] = useState(balance);
 
+    // const [getNewBalance, setGetNewBalance] = useState(newBalance);
+    // console.log(newBalance);
 
     return (
         <div style={{ border: "1px solid red" }} id="totalSavingsAdultsContainer">

@@ -14,7 +14,6 @@ export default function ChangeTotalSavings({balance}) {
         e.preventDefault();
          setNewBalance(newBalance => newBalance - Number (inputAmount))
          console.log(newBalance);
-        
     }
 
     const increaseBtn = (e) => {
@@ -33,7 +32,8 @@ export default function ChangeTotalSavings({balance}) {
 
             <button className={styles.button} onClick={increaseBtn}>+</button>
 
-            <p>{newBalance}</p>
+            <h3>{newBalance}</h3>
+    
         </div>
     )
 }

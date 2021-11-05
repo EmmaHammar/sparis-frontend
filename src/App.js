@@ -9,7 +9,9 @@ function App() {
 
   // should be in in plural i.e. dbAccounts, dbParents? 
   // props should be dbAccounts.accounts, dbChildren.children, dbParents.parents??
+
   
+
   const [dbAccount, setDbAccount] = useState({
 
     "accounts": [
