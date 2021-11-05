@@ -6,7 +6,6 @@ export default function ChangeTotalSavings({decreaseBtn, increaseBtn, inputAmoun
 
     return (
         <div className={styles.wrapper}>
-            <i>ChangeTotalSavings</i>
             <br/>
             <button className={styles.button} onClick={decreaseBtn}>-</button>
 
