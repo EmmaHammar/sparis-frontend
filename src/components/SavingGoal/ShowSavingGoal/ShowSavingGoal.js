@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './ShowSavingGoal.module.scss'
 
 export default function ShowSavingGoal({ clickedChildObj }) {
-
+console.log(clickedChildObj );
     return (
         <div className={styles.wrapper} id="showSavingGoalContainer">
             {/* <i>ShowSavingGoal</i> */}

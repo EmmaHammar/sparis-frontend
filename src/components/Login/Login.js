@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Login.module.scss";
 import { Link } from "react-router-dom";
 
-export default function Login({ dbParent, dbChildren,setAccountIdState,accountIdState }) {
+export default function Login({ dbParent, dbChildren,user,setUser }) {
   // React States
   const [logedInUser, setLogedInUser] = useState({
     userName: "",
@@ -40,7 +40,7 @@ export default function Login({ dbParent, dbChildren,setAccountIdState,accountId
         setLogedInUser((previousState) => {
           return { ...previousState, accountId: userChild.accountId };
         });
-        setAccountIdState(userChild.accountId);
+        setUser(userChild)
 
         {
           console.log(userChild);
@@ -59,7 +59,8 @@ export default function Login({ dbParent, dbChildren,setAccountIdState,accountId
             return { ...previousState, accountId: userParent.accountId };
             
           });
-          setAccountIdState(userParent.accountId);
+          setUser(userParent)
+
           {
             console.log(userParent.accountId);
           }
@@ -70,8 +71,7 @@ export default function Login({ dbParent, dbChildren,setAccountIdState,accountId
       }
     }
   };
-  console.log('accountId',accountIdState);
-
+console.log('user',user);
   // Generate JSX code for error message
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (
