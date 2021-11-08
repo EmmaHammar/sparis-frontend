@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import NavFooterAdults from '../containers/Adults/NavFooterAdults'
 import SettingsAdults from '../containers/Adults/SettingsAdults'
 import TotalSavingsAdults from '../containers/Adults/TotalSavingsAdults'
@@ -11,10 +11,7 @@ export default function Adults({dbAccount, dbParent, dbChildren}) {
     const [clickedChildObj, setClickedChildObj] = useState({});
     const [showChildProfile, setShowChildProfile] = useState(false);
     const [savingGoalExists, setSavingGoalExists] = useState(false);
-
-    //fix error when toggling between kids. Only works first render:
     const [balance, setBalance] = useState(Number);
-    const [inputAmount, setInputAmount] = useState(Number);
 
     const handleClick = (evt) => {
         // reset savingGoalExists:
@@ -60,7 +57,7 @@ export default function Adults({dbAccount, dbParent, dbChildren}) {
                <>
                 <h2>{clickedChildObj.userName}</h2>
                 <SavingGoalAdults clickedChildObj={clickedChildObj} savingGoalExists={savingGoalExists}/>
-                <TotalSavingsAdults clickedChildObj={clickedChildObj} balance={balance} inputAmount={inputAmount} />
+                <TotalSavingsAdults clickedChildObj={clickedChildObj} balance={balance} setBalance={setBalance} />
                </>
             : ""}
            
