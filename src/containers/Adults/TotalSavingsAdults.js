@@ -4,27 +4,24 @@ import { ShowTotalSavings, ChangeTotalSavings, MinusTotalSavings, PlusTotalSavin
 
 export default function TotalSavingsAdults(props) {
 
-    // const [clickedChildObj, setClickedChildObj] = useState(props.clickedChildObj);
-
-    // const [balance, setBalance] = useState({balance}); //denna blir ej rätt
+    const [balance, setBalance] = useState(props.balance); 
     const [inputAmount, setInputAmount] = useState("");
-
-    // console.log("balance after click:", clickedChildObj.balance);
 
     // const decreaseBtn = (e) => {
     //     e.preventDefault();
-    //      setBalance(balance => balance - Number (inputAmount))
+    //      setBalance(copyBalance => copyBalance - Number (inputAmount))
     // }
 
     // const increaseBtn = (e) => {
     //     e.preventDefault();
-    //      setBalance(balance => balance + Number(inputAmount))      
+    //      setBalance(copyBalance => copyBalance + Number(inputAmount))      
     //  }
 
     return (
         <div style={{ border: "1px solid red", backgroundColor: "white", padding: "20px"}} id="totalSavingsAdultsContainer">
-            <ShowTotalSavings balance={props.clickedChildObj.balance}></ShowTotalSavings>
-            {/* <ChangeTotalSavings balance={clickedChildObj.balance} decreaseBtn={decreaseBtn} increaseBtn={increaseBtn} inputAmount={inputAmount} setInputAmount={setInputAmount} ></ChangeTotalSavings> */}
+            <ShowTotalSavings balance={props.balance}></ShowTotalSavings>
+            <ChangeTotalSavings balance={props.balance}/>
+            {/* <ChangeTotalSavings balance={props.balance} decreaseBtn={decreaseBtn} increaseBtn={increaseBtn} inputAmount={inputAmount} setInputAmount={setInputAmount} ></ChangeTotalSavings> */}
             <MinusTotalSavings></MinusTotalSavings>
             <PlusTotalSavings></PlusTotalSavings>
         </div>

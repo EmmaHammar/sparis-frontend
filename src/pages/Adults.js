@@ -32,6 +32,9 @@ export default function Adults({dbAccount, dbParent, dbChildren}) {
         };
         setClickedChildObj(dbChildren.children.find(isChildId));
 
+        //sets clickedChildObj's balance to state (needed in TotalSavingsAdults):
+        setBalance(dbChildren.children.find(isChildId).balance);
+    
         if (dbChildren.children.find(isChildId).goalAmount !== 0) {
             setSavingGoalExists(true);
         } else {
@@ -54,7 +57,7 @@ export default function Adults({dbAccount, dbParent, dbChildren}) {
                <>
                 <h2>{clickedChildObj.userName}</h2>
                 <SavingGoalAdults clickedChildObj={clickedChildObj} savingGoalExists={savingGoalExists}/>
-                <TotalSavingsAdults clickedChildObj={clickedChildObj}/>
+                <TotalSavingsAdults clickedChildObj={clickedChildObj} balance={balance}/>
                </>
             : ""}
            
