@@ -4,7 +4,6 @@ import styles from './PlusTotalSavings.module.scss'
 export default function PlusTotalSavings() {
     return (
         <div className={styles.wrapper}>
-            <i>PlusTotalSavings</i>
         </div>
     )
 }
