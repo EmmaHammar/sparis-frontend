@@ -15,7 +15,7 @@ export default function ChangeTotalSavings(props) {
         console.log("newBalance", newBalance);
         setBalance(newBalance);
 
-        //left: print balance - eller borde balance uppdateras? Borde göra kopia på balance?
+        //to do: print balance - eller borde balance uppdateras? Borde göra kopia på balance?
     }
 
     const increaseBtn = (e) => {
@@ -25,7 +25,7 @@ export default function ChangeTotalSavings(props) {
         console.log("newBalance", newBalance);
         setBalance(newBalance);
 
-        //left: print balance
+        //print balance
     }
         
     return (
@@ -39,10 +39,3 @@ export default function ChangeTotalSavings(props) {
         </div>
     )
 }
-
-
-
-// const [inputAmount, setInputAmount] = useState("");
-
-
-

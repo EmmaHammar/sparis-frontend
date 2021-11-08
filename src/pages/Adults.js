@@ -12,8 +12,9 @@ export default function Adults({dbAccount, dbParent, dbChildren}) {
     const [showChildProfile, setShowChildProfile] = useState(false);
     const [savingGoalExists, setSavingGoalExists] = useState(false);
 
-    //testing
+    //fix error when toggling between kids. Only works first render:
     const [balance, setBalance] = useState(Number);
+    const [inputAmount, setInputAmount] = useState(Number);
 
     const handleClick = (evt) => {
         // reset savingGoalExists:
@@ -34,6 +35,8 @@ export default function Adults({dbAccount, dbParent, dbChildren}) {
 
         //sets clickedChildObj's balance to state (needed in TotalSavingsAdults):
         setBalance(dbChildren.children.find(isChildId).balance);
+
+        //set newBalance here?
     
         if (dbChildren.children.find(isChildId).goalAmount !== 0) {
             setSavingGoalExists(true);
@@ -57,7 +60,7 @@ export default function Adults({dbAccount, dbParent, dbChildren}) {
                <>
                 <h2>{clickedChildObj.userName}</h2>
                 <SavingGoalAdults clickedChildObj={clickedChildObj} savingGoalExists={savingGoalExists}/>
-                <TotalSavingsAdults clickedChildObj={clickedChildObj} balance={balance}/>
+                <TotalSavingsAdults clickedChildObj={clickedChildObj} balance={balance} inputAmount={inputAmount} />
                </>
             : ""}
            

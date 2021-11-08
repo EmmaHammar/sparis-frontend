@@ -3,10 +3,9 @@ import React, { useState, useEffect } from 'react'
 import { ShowTotalSavings, ChangeTotalSavings, MinusTotalSavings, PlusTotalSavings } from '../../components/TotalSavings'
 
 export default function TotalSavingsAdults(props) {
-
     const [balance, setBalance] = useState(props.balance); 
-    const [inputAmount, setInputAmount] = useState("");
-
+    const [inputAmount, setInputAmount] = useState(props.inputAmount);
+    
     // const decreaseBtn = (e) => {
     //     e.preventDefault();
     //      setBalance(copyBalance => copyBalance - Number (inputAmount))
