@@ -6,7 +6,6 @@ export default function TotalSavingsAdults({clickedChildObj}) {
 
     const [balance, setBalance] = useState(clickedChildObj.balance);
     const [inputAmount, setInputAmount] = useState("");
-
     const decreaseBtn = (e) => {
         e.preventDefault();
          setBalance(balance => balance - Number (inputAmount))
