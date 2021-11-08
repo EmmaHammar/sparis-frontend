@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from './ShowTotalSavings.module.scss'
+import piggy from '../../../Images/piggy-color.png'
 
 export default function ShowTotalSavings({balance}) {
-    // console.log("balance in ShowTotalSavings:", balance);s
+
     return (
         <div className={styles.wrapper}>
-            <i>ShowTotalSavings</i>
-            <p>{balance} kr</p>
-            <p>bild sparis</p>
+            <h3 className={styles.showBalance}>{balance} kr</h3>
+            <img src={piggy} className={styles.piggy} alt="logo" />
         </div>
     )
 }
