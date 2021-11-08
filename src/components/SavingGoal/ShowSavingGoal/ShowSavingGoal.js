@@ -5,7 +5,7 @@ export default function ShowSavingGoal({ clickedChildObj }) {
 
     return (
         <div className={styles.wrapper} id="showSavingGoalContainer">
-            <i>ShowSavingGoal</i>
+            {/* <i>ShowSavingGoal</i> */}
 
             {/*Fix  error */}
             <h3>{clickedChildObj.goalTitle}</h3>
