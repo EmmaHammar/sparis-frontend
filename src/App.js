@@ -90,7 +90,10 @@ function App() {
   return (
 
     <>
-      {isloading ? <Loader /> :
+      {/* Add Loader later when testing finish */}
+      {/* {isloading ? <Loader /> :
+         */}
+      {
         <Router>
           <Switch>
             <Route exact path="/">

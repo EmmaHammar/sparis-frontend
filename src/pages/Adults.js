@@ -12,6 +12,9 @@ export default function Adults({dbAccount, dbParent, dbChildren}) {
     const [showChildProfile, setShowChildProfile] = useState(false);
     const [savingGoalExists, setSavingGoalExists] = useState(false);
 
+    //testing
+    const [balance, setBalance] = useState(Number);
+
     const handleClick = (evt) => {
         // reset savingGoalExists:
         if (savingGoalExists === true) {
