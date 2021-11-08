@@ -10,7 +10,8 @@ function App() {
   // should be in in plural i.e. dbAccounts, dbParents? 
   // props should be dbAccounts.accounts, dbChildren.children, dbParents.parents??
 
-  
+  const [accountIdState, setAccountIdState] = useState("")
+
   const [isloading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -94,13 +95,13 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-            <Home dbParent={dbParent} dbChildren={dbChildren}/>
+            <Home dbParent={dbParent} dbChildren={dbChildren} accountIdState={accountIdState} setAccountIdState={setAccountIdState} />
             </Route>
             <Route exact path="/Children">
               <Children dbAccount={dbAccount} dbChildren={dbChildren} />
             </Route>
             <Route exact path="/Adults">
-              <Adults dbAccount={dbAccount} dbParent={dbParent} dbChildren={dbChildren} />
+              <Adults dbAccount={dbAccount} dbParent={dbParent} dbChildren={dbChildren} accountIdState={accountIdState} setAccountIdState={setAccountIdState} />
             </Route>
           </Switch>
         </Router>
