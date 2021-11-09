@@ -8,7 +8,6 @@ export default function Children({user,setUser}) {
     return (
        
         <div>
-             {console.log('user from children page ',user)}
             <SettingsChildren />
             <SavingGoalChildren  user={user} setUser={setUser} />
             <TotalSavingsChildren user={user} setUser={setUser}/>

@@ -5,7 +5,6 @@ import TotalSavingsAdults from '../containers/Adults/TotalSavingsAdults'
 import SavingGoalAdults from '../containers/Adults/SavingGoalAdults'
 
 export default function Adults({dbAccount, dbParent, dbChildren,user,setUser}) {
-console.log('accoutIdState from adult page',user.accountId);
     //NOTE expect accountId from login ok? Get from localStorage?
     const [loginAccountId, setLoginAccountId] = useState(user.accountId); 
     const [clickedChildObj, setClickedChildObj] = useState({});

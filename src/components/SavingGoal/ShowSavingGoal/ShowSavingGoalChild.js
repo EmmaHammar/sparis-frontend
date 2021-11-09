@@ -6,7 +6,6 @@ export default function ShowSavingGoal({user,setUser}) {
     return (
         <div className={styles.wrapper} id="showSavingGoalContainer">
              <i>ShowSavingGoal</i> 
-          { console.log('user from ShowingSavingGoal',user)}
 
             {/*Fix  error */}
             <h3>{user.goalTitle}</h3>

@@ -43,7 +43,6 @@ export default function Login({ dbParent, dbChildren,user,setUser }) {
         setUser(userChild)
 
         {
-          console.log(userChild);
         }
       }
     } else {
@@ -62,7 +61,6 @@ export default function Login({ dbParent, dbChildren,user,setUser }) {
           setUser(userParent)
 
           {
-            console.log(userParent.accountId);
           }
         }
       } else {
@@ -71,7 +69,6 @@ export default function Login({ dbParent, dbChildren,user,setUser }) {
       }
     }
   };
-console.log('user',user);
   // Generate JSX code for error message
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (
