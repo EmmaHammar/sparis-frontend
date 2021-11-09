@@ -1,25 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { ShowTotalSavings, ChangeTotalSavings, MinusTotalSavings, PlusTotalSavings } from '../../components/TotalSavings'
 
-export default function TotalSavingsAdults({clickedChildObj}) {
-
-    const [balance, setBalance] = useState(clickedChildObj.balance);
-    const [inputAmount, setInputAmount] = useState("");
-    const decreaseBtn = (e) => {
-        e.preventDefault();
-         setBalance(balance => balance - Number (inputAmount))
-    }
-
-    const increaseBtn = (e) => {
-        e.preventDefault();
-         setBalance(balance => balance + Number(inputAmount))      
-     }
+export default function TotalSavingsAdults({balance, setBalance}) {
 
     return (
         <div style={{ border: "1px solid red", backgroundColor: "white", padding: "20px"}} id="totalSavingsAdultsContainer">
             <ShowTotalSavings balance={balance}></ShowTotalSavings>
-            <ChangeTotalSavings balance={balance} decreaseBtn={decreaseBtn} increaseBtn={increaseBtn} inputAmount={inputAmount} setInputAmount={setInputAmount} ></ChangeTotalSavings>
+            <ChangeTotalSavings balance={balance} setBalance={setBalance}/>
             <MinusTotalSavings></MinusTotalSavings>
             <PlusTotalSavings></PlusTotalSavings>
         </div>

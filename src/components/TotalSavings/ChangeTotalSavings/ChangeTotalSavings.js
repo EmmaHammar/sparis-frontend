@@ -2,8 +2,31 @@ import React from 'react'
 import { useState } from "react";
 import styles from './ChangeTotalSavings.module.scss'
 
-export default function ChangeTotalSavings({decreaseBtn, increaseBtn, inputAmount, setInputAmount}) {
+export default function ChangeTotalSavings({balance, setBalance}) {
 
+    const [inputAmount, setInputAmount] = useState(Number);
+
+    const decreaseBtn = (e) => {
+        e.preventDefault();
+
+        let newBalance = balance - inputAmount;
+        console.log("newBalance", newBalance);
+        setBalance(newBalance);
+    }
+
+    //Add newBalance to DB
+
+    const increaseBtn = (e) => {
+        e.preventDefault();
+
+        let newBalance = balance + Number(inputAmount);
+        console.log("newBalance", newBalance);
+        setBalance(newBalance);
+
+    }
+
+    //Add newBalance to DB
+        
     return (
         <div className={styles.wrapper}>
             <br/>
