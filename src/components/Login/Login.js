@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Login.module.scss";
 import { Link } from "react-router-dom";
 
-export default function Login({ dbParent, dbChildren }) {
+export default function Login({ dbParent, dbChildren,user,setUser }) {
   // React States
   const [logedInUser, setLogedInUser] = useState({
     userName: "",
@@ -17,7 +17,6 @@ export default function Login({ dbParent, dbChildren }) {
     uname: "invalid username",
     pass: "invalid password",
   };
-
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
@@ -41,8 +40,9 @@ export default function Login({ dbParent, dbChildren }) {
         setLogedInUser((previousState) => {
           return { ...previousState, accountId: userChild.accountId };
         });
+        setUser(userChild)
+
         {
-          console.log(userChild);
         }
       }
     } else {
@@ -56,9 +56,11 @@ export default function Login({ dbParent, dbChildren }) {
           setIsAdult(true);
           setLogedInUser((previousState) => {
             return { ...previousState, accountId: userParent.accountId };
+            
           });
+          setUser(userParent)
+
           {
-            console.log(userParent.accountId);
           }
         }
       } else {
@@ -67,7 +69,6 @@ export default function Login({ dbParent, dbChildren }) {
       }
     }
   };
-
   // Generate JSX code for error message
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (
@@ -120,9 +121,7 @@ export default function Login({ dbParent, dbChildren }) {
         {isChild ? (
           <Link to="/Children">
             <button className={styles.childButton}
-              onClick={() =>
-                localStorage.setItem("accountId", logedInUser.accountId)
-              }
+             
             >
              <b> Välkommen {logedInUser.userName.toUpperCase()}</b> <br/> klicka för att se din sida
             </button>
@@ -131,11 +130,7 @@ export default function Login({ dbParent, dbChildren }) {
           <>
             {isAdult ? (
               <Link to="/Adults">
-                <button className={styles.adultButton}
-                  onClick={() =>
-                    localStorage.setItem("accountId", logedInUser.accountId)
-                  }
-                >
+                <button className={styles.adultButton} >
                  <b> Välkommen {logedInUser.userName.toUpperCase()}</b><br/> klicka för att se din sida
                 </button>
               </Link>
