@@ -14,6 +14,8 @@ export default function ChangeTotalSavings({balance, setBalance}) {
         setBalance(newBalance);
     }
 
+    //Add newBalance to DB
+
     const increaseBtn = (e) => {
         e.preventDefault();
 
@@ -22,6 +24,8 @@ export default function ChangeTotalSavings({balance, setBalance}) {
         setBalance(newBalance);
 
     }
+
+    //Add newBalance to DB
         
     return (
         <div className={styles.wrapper}>
