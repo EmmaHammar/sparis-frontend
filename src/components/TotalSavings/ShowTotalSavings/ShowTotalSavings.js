@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './ShowTotalSavings.module.scss'
-import piggy from '../../../images2/piggy-color.png'
+import piggy from '../../../images/piggy-color.png'
 
 export default function ShowTotalSavings({balance}) {
 

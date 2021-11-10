@@ -19,7 +19,6 @@ export default function Children({user,setUser}) {
 
     }, [])
 
-
     return (
        
         <div>

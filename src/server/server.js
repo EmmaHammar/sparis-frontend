@@ -14,8 +14,6 @@ export async function logInUser(username, password ) {
 
     const users = await response.json();
 
-    console.log(users)
-
     return users
 
 }

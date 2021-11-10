@@ -27,10 +27,6 @@ export default function Adults({dbAccount, dbParent, dbChildren, user,setUser}) 
 
     }, [])
 
-    
-    console.log(parent, children)
-
-
     const handleClick = (evt) => {
         // reset savingGoalExists:
         if (savingGoalExists === true) {
