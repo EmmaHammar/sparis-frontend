@@ -91,13 +91,15 @@ function App() {
 
     <>
       {/* Add Loader later when testing finish */}
-      {/* {isloading ? <Loader /> :
-         */}
+       
+        
       {
         <Router>
           <Switch>
             <Route exact path="/">
+            {isloading ? <Loader /> :
             <Home dbParent={dbParent} dbChildren={dbChildren}  user={user} setUser={setUser}/>
+            }
             </Route>
             <Route exact path="/Children">
               <Children dbAccount={dbAccount} dbChildren={dbChildren}  user={user} setUser={setUser}/>

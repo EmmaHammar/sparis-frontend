@@ -3,6 +3,7 @@ import NavFooterAdults from '../containers/Adults/NavFooterAdults'
 import SettingsAdults from '../containers/Adults/SettingsAdults'
 import TotalSavingsAdults from '../containers/Adults/TotalSavingsAdults'
 import SavingGoalAdults from '../containers/Adults/SavingGoalAdults'
+import { useLocation } from "react-router-dom";
 
 export default function Adults({dbAccount, dbParent, dbChildren, user,setUser}) {
 
@@ -12,6 +13,23 @@ export default function Adults({dbAccount, dbParent, dbChildren, user,setUser}) 
     const [showChildProfile, setShowChildProfile] = useState(false);
     const [savingGoalExists, setSavingGoalExists] = useState(false);
     const [balance, setBalance] = useState(Number);
+    const [parent, setParent] = useState("");
+    const [children, setChildren] = useState("");
+
+    const location = useLocation();
+
+    useEffect(() => {
+
+        //Data from Db
+        const dbData = location.state.params;
+        setParent(dbData.parent[0])
+        setChildren(dbData.children)
+
+    }, [])
+
+    
+    console.log(parent, children)
+
 
     const handleClick = (evt) => {
         // reset savingGoalExists:
