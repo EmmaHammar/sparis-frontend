@@ -15,13 +15,14 @@ export default function GoalComplete() {
 
       {showConfetti && (
         <div style={{ display: "flex", "justifyContent": "space-between" }}>
+            
           <div style={{ width: "100%", height: "100%"}}>
-            <button className={styles.startBtn} onClick={() => toggleStreamAnimation(true)}>start</button>
-            <button className={styles.stopBtn} onClick={() => toggleStreamAnimation(false)}>stop</button>
-            <Confetti
+             <Confetti
               options={{ count: 50, timeout: 5000 }}
               streamAnimation={streamAnimation}
             />
+            <button className={styles.startBtn} onClick={() => toggleStreamAnimation(true)}>start</button>
+            <button className={styles.stopBtn} onClick={() => toggleStreamAnimation(false)}>stop</button>
           </div>
         </div>
       )}
