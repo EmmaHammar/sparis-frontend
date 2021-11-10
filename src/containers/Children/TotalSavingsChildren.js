@@ -1,13 +1,13 @@
 
 import React from 'react'
 
-import { ShowTotalSavings } from '../../components/TotalSavings'
+import { ShowTotalSavingsChild } from '../../components/TotalSavings'
 
-export default function TotalSavingsChildren() {
+export default function TotalSavingsChildren({child,setChild}) {
     return (
         <div style={{ border: "1px solid red" }}>
-            <h3>TotalSavings</h3>
-            <ShowTotalSavings></ShowTotalSavings>
+           
+            <ShowTotalSavingsChild child={child} setChild={setChild}></ShowTotalSavingsChild>
         </div>
     )
 }

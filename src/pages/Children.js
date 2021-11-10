@@ -23,8 +23,8 @@ export default function Children({user,setUser}) {
        
         <div>
             <SettingsChildren />
-            <SavingGoalChildren  user={user} setUser={setUser} />
-            <TotalSavingsChildren user={user} setUser={setUser}/>
+            <SavingGoalChildren  child={child} setChild={setChild} />
+            <TotalSavingsChildren child={child} setChild={setChild}/>
             <NavFooterChildren />
         </div>
     )

@@ -3,15 +3,21 @@
 import { NoSavingGoal, AddSavingGoal, ShowSavingGoalChild, ActivateGoalComplete, GoalComplete } from '../../components/SavingGoal/index'
 
 
-export default function SavingGoalChildren({user,setUser}) {
+export default function SavingGoalChildren({child,setChild}) {
     return (
         <div style={{ border: "1px solid red" }}>
-            <h3>SavingGoals</h3>
-            <NoSavingGoal></NoSavingGoal>
-            <AddSavingGoal></AddSavingGoal>
-            <ShowSavingGoalChild user={user} setUser={setUser}></ShowSavingGoalChild>
-            <ActivateGoalComplete></ActivateGoalComplete>
-            <GoalComplete></GoalComplete>
+           {child.goalAmount !== 0 ? 
+            <>
+                <ShowSavingGoalChild child={child} setChild={setChild}></ShowSavingGoalChild>
+                <ActivateGoalComplete></ActivateGoalComplete>
+                <GoalComplete></GoalComplete>
+            </>
+            :
+            <>
+                <NoSavingGoal></NoSavingGoal>
+                <AddSavingGoal></AddSavingGoal>
+            </>
+            }
         </div>
     )
 }
