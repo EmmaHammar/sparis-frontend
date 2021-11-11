@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Loader.module.scss'
-import logo from '../../images2/piggy.svg'
+import logo from '../../images/piggy.svg'
 
 export default function Loader() {
     return (
