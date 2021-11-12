@@ -1,0 +1,42 @@
+.wrapper {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.inputAmount {
+    margin: 2px;
+    position: relative;
+    padding: 10px;
+    font-size: 15px;
+    width: 140px;
+    border-radius: 6px;
+    border-color: #dddddd;
+}
+.button {
+  margin: 5px;
+  background-color: #27ae60;
+  border-radius: 50%;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 11px 19px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+  .button:hover {
+    background-color: #1e8449;
+  }
+
+  .button:active {
+    transform: translateY(2px);
+  }
+
+
