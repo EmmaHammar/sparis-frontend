@@ -1,16 +1,14 @@
-import React from 'react'
-import styles from './ShowSavingGoal.module.scss'
+import React from 'react';
+import styles from './ShowSavingGoal.module.scss';
 
-export default function ShowSavingGoal({ clickedChildObj }) {
+export default function ShowSavingGoal({ showChild }) {
     return (
         <div className={styles.wrapper} id="showSavingGoalContainer">
-            {/* <i>ShowSavingGoal</i> */}
 
-            {/*Fix  error */}
-            <h3>{clickedChildObj.goalTitle}</h3>
-            <img src={clickedChildObj.goalPic} alt={clickedChildObj.goalTitle} id="goalPic"></img>
-            <p>Pris: {clickedChildObj.goalAmount} kr</p>
+            <h3>{showChild.goalTitle}</h3>
+            <img src={showChild.goalPic} alt={showChild.goalTitle} id="goalPic"></img>
+            <p>Pris: {showChild.goalAmount} kr</p>
             <button id="goalCompleteBtn">Klar</button>
         </div>
     )
-}
+};

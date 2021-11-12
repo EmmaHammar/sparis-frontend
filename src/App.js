@@ -7,9 +7,6 @@ import Home from './pages/home';
 
 function App() {
 
-  // should be in in plural i.e. dbAccounts, dbParents? 
-  // props should be dbAccounts.accounts, dbChildren.children, dbParents.parents??
-
   const [isloading, setIsLoading] = useState(true)
 
   useEffect(() => {
