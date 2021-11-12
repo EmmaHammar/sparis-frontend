@@ -5,7 +5,7 @@ import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, Activate
 export default function SavingGoal({showChild, savingGoalExists}) {
    
     return (
-        <div style={{ border: "1px solid red" }} id="savingGoalAdultsContainer">
+        <div style={{ border: "1px solid red" }} id="savingGoalContainer">
             {savingGoalExists ? 
                 <>
                     <ShowSavingGoal showChild={showChild}></ShowSavingGoal>
@@ -14,7 +14,7 @@ export default function SavingGoal({showChild, savingGoalExists}) {
                     <GoalComplete></GoalComplete>
                 </> : 
                 <>
-                    <NoSavingGoal></NoSavingGoal> <AddSavingGoal></AddSavingGoal> 
+                    <NoSavingGoal></NoSavingGoal> <AddSavingGoal showChild={showChild}></AddSavingGoal> 
                 </>
             }
 
