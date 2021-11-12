@@ -8,7 +8,7 @@ export default function ShowSavingGoal({ showChild }) {
             <h3>{showChild.goalTitle}</h3>
             <img src={showChild.goalPic} alt={showChild.goalTitle} id="goalPic"></img>
             <p>Pris: {showChild.goalAmount} kr</p>
-            <button id="goalCompleteBtn">Klar</button>
+        
         </div>
     )
 };
