@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react';
 
-import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, ActivateGoalComplete, GoalComplete } from '../../components/SavingGoal/index'
+import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, ActivateGoalComplete, GoalComplete } from '../../components/SavingGoal/index';
 
-export default function SavingGoal({clickedChildObj, savingGoalExists}) {
+export default function SavingGoal({showChild, savingGoalExists}) {
    
     return (
         <div style={{ border: "1px solid red" }} id="savingGoalAdultsContainer">
             {savingGoalExists ? 
                 <>
-                    <ShowSavingGoal clickedChildObj={clickedChildObj}></ShowSavingGoal>
+                    <ShowSavingGoal showChild={showChild}></ShowSavingGoal>
                     <DeleteSavingGoal></DeleteSavingGoal>
                     <ActivateGoalComplete></ActivateGoalComplete>
                     <GoalComplete></GoalComplete>
@@ -20,7 +20,4 @@ export default function SavingGoal({clickedChildObj, savingGoalExists}) {
 
         </div>
     )
-}
-
-
-
+};

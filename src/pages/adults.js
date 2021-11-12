@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import NavFooter from '../containers/general/navFooter'
-import Settings from '../containers/general/settings'
-import TotalSavingsAdults from '../containers/general/totalSavings'
-import SavingGoalAdults from '../containers/general/savingGoal'
+import React, { useEffect, useState } from 'react';
+import NavFooter from '../containers/general/navFooter';
+import Settings from '../containers/general/settings';
+import TotalSavings from '../containers/general/totalSavings';
+import SavingGoal from '../containers/general/savingGoal';
 import { useLocation } from "react-router-dom";
 
 export default function Adults() {
 
-    //NOTE expect accountId from login ok? Get from localStorage?
-    const [clickedChildObj, setClickedChildObj] = useState({});
+    const [showChild, setShowChild] = useState({});
     const [showChildProfile, setShowChildProfile] = useState(false);
     const [savingGoalExists, setSavingGoalExists] = useState(false);
     const [balance, setBalance] = useState(Number);
@@ -22,9 +21,8 @@ export default function Adults() {
         //Data from Db
         const dbData = location.state;
 
-        setParent(dbData.parent[0])
-        setChildren(dbData.children)
-
+        setParent(dbData.parent[0]);
+        setChildren(dbData.children);
 
     }, [])
 
@@ -32,10 +30,10 @@ export default function Adults() {
         // reset savingGoalExists:
         if (savingGoalExists === true) {
             setSavingGoalExists(false);
-        }
+        };
         if (savingGoalExists === false) {
             setSavingGoalExists(true);
-        }
+        };
 
         setShowChildProfile(true);
 
@@ -43,7 +41,7 @@ export default function Adults() {
         const isChildId = (child) => {
             return child.childId == evt.target.id;
         };
-        setClickedChildObj(dbChildren.find(isChildId));
+        setShowChild(dbChildren.find(isChildId));
 
         //sets clickedChildObj's balance to state (needed in TotalSavingsAdults):
         setBalance(dbChildren.find(isChildId).balance);
@@ -54,9 +52,8 @@ export default function Adults() {
             setSavingGoalExists(true);
         } else {
             setSavingGoalExists(false);
-        }
+        };
     };
-
 
     return (
         <div id="adultsContainer">
@@ -79,9 +76,9 @@ export default function Adults() {
 
             {showChildProfile ?
                 <>
-                    <h2>{clickedChildObj.userName}</h2>
-                    <SavingGoalAdults clickedChildObj={clickedChildObj} savingGoalExists={savingGoalExists} />
-                    <TotalSavingsAdults clickedChildObj={clickedChildObj} balance={balance} setBalance={setBalance} />
+                    <h2>{showChild.userName}</h2>
+                    <SavingGoal showChild={showChild} savingGoalExists={savingGoalExists} />
+                    <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} />
                 </>
                 : ""}
 
@@ -89,7 +86,4 @@ export default function Adults() {
 
         </div>
     )
-}
-
-
-
+};
