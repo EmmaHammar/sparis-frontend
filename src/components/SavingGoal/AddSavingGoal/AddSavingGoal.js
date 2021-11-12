@@ -4,14 +4,12 @@ import styles from './AddSavingGoal.module.scss';
 export default function AddSavingGoal(props) {
 
     const [showChild, setShowChild] = useState(props.showChild); 
-
     const [showForm, setShowForm] = useState(false);
     const [newGoalTitle, setNewGoalTitle] = useState("");
     const [newGoalAmount, setNewGoalAmount] = useState(Number);
     const [newGoalPic, setNewGoalPic] = useState("");
     const [showErrorMsg, setShowErrorMsg] = useState(false);
 
-    // console.log("showChild", showChild);
     const onClick = () => {
         setShowForm(true);
     };
@@ -24,15 +22,15 @@ export default function AddSavingGoal(props) {
         newGoal.goalAmount = newGoalAmount;
         newGoal.goalPic = newGoalPic;
 
-        //not updating state showChild in from parents correctly:
-        setShowChild(newGoal);
-        console.log("newGoalTest", newGoal);
-        console.log("showChild", showChild);
-
         //validate input
         if (newGoalTitle !== "" && newGoalAmount !== null && newGoalPic !== "") {
-            //save newGoal to db - även skicka med accountId + childId? 
+
+            //set changeSavingGoalExists() in savingGoal.js to true:
+            props.changeSavingGoalExists(newGoal);
+
+            //save newGoal to db 
             console.log("save newGoal to db:", newGoal);
+
         } else {
             setShowErrorMsg(true);
         };
