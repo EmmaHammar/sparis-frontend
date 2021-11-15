@@ -5,7 +5,7 @@ import styles from './AddPocketMoney.module.scss'
 export default function AddPocketMoney() {
     return (
         <div className={styles.wrapper}>
-            <i>AddPocketMoney</i>
+            <i>Veckopeng</i>
         </div>
     )
 }
