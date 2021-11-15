@@ -3,6 +3,7 @@
 }
 
 .celebrateBtn {
+    width: 80px;
     padding: 15px;
     background: #27ae60;
     color: white;
@@ -16,35 +17,6 @@
     background: #1c974f;
 }
 
-.startBtn {
-    padding: 10px;
-    width: 65px;
-    background: #ff8fe3;
-    color: white;
-    margin: 25px;
-    border-style: none;
-    border-radius: 7px;
-    font-size: 16px;
-}
-
-.startBtn:hover {
-    background: #e970ca;
-}
-
-.stopBtn {
-    padding: 10px;
-    width: 65px;
-    background: #38cfdd;
-    color: white;
-    margin: 25px;
-    border-style: none;
-    border-radius: 7px;
-    font-size: 16px;
-}
-
-.stopBtn:hover {
-    background: #30b1bd;
-}
 
 
 
