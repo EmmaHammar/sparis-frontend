@@ -5,7 +5,7 @@ import styles from './AddUser.module.scss'
 export default function AddUser() {
     return (
         <div className={styles.wrapper}>
-            <i>AddUser</i>
+            <p>Lägg till förälder/barn</p>
         </div>
     )
 }
