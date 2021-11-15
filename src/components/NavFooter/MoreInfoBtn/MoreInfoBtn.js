@@ -4,7 +4,7 @@ import styles from './MoreInfoBtn.module.scss'
 export default function MoreInfoBtn() {
     return (
         <div className={styles.wrapper}>
-            <i>MoreInfoBtn</i>
+            <button className={styles.navBtn}>Om Oss</button>
         </div>
     )
 }
