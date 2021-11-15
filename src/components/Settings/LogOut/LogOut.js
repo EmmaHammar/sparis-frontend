@@ -5,7 +5,7 @@ import styles from './LogOut.module.scss'
 export default function LogOut() {
     return (
         <div className={styles.wrapper}>
-            <i>LogOut</i>
+            <p>Logga ut</p>
         </div>
     )
 }
