@@ -15,21 +15,14 @@ export default function Children() {
         //Data from Db
         const dbData = location.state;
         setShowChild(dbData.child);
+        console.log("error showChild hämtas inte alltid fr db:", showChild);
 
-        // reset savingGoalExists:
-        if (savingGoalExists === true) {
-            setSavingGoalExists(false);
-        };
-        if (savingGoalExists === false) {
-            setSavingGoalExists(true);
-        };
         //check if savingGoalExists:
-        if (showChild.goalAmount !== 0) {
+        if (showChild.goalAmount !== "") {
             setSavingGoalExists(true);
         } else {
             setSavingGoalExists(false);
         };
-
     }, []);
 
     return (

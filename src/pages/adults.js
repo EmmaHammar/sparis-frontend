@@ -69,7 +69,7 @@ export default function Adults() {
             {showChildProfile ?
                 <>
                     <h2>{showChild.userName}</h2>
-                    <SavingGoal showChild={showChild} savingGoalExists={savingGoalExists} />
+                    <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists} />
                     <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} />
                 </>
                 : ""}
