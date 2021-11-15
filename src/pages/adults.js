@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 export default function Adults() {
 
     const [showChild, setShowChild] = useState({});
-    const [showChildProfile, setShowChildProfile] = useState(false);
+    const [showChildProfile, setShowChildProfile] = useState(false)
     const [savingGoalExists, setSavingGoalExists] = useState(false);
     const [balance, setBalance] = useState(Number);
     const [parent, setParent] = useState("");
@@ -27,13 +27,6 @@ export default function Adults() {
     }, [])
 
     const handleClick = (evt) => {
-        // reset savingGoalExists:
-        if (savingGoalExists === true) {
-            setSavingGoalExists(false);
-        };
-        if (savingGoalExists === false) {
-            setSavingGoalExists(true);
-        };
 
         setShowChildProfile(true);
 
@@ -41,14 +34,13 @@ export default function Adults() {
         const isChildId = (child) => {
             return child.childId == evt.target.id;
         };
+
         setShowChild(dbChildren.find(isChildId));
 
         //sets clickedChildObj's balance to state (needed in TotalSavingsAdults):
         setBalance(dbChildren.find(isChildId).balance);
-
-        //set newBalance here?
-
-        if (dbChildren.find(isChildId).goalAmount !== 0) {
+        
+        if (dbChildren.find(isChildId).goalAmount !== "") {
             setSavingGoalExists(true);
         } else {
             setSavingGoalExists(false);
