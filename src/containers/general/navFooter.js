@@ -4,14 +4,13 @@ import { ProgressBtn, ShowProgress, PocketMoneyBtn, AddPocketMoney, MoreInfoBtn,
 
 export default function NavFooter() {
     return (
-        <div style={{ border: "1px solid red" }}>
-            <h3>NavFooter</h3>
+        <div style={{ display: "flex", justifyContent: "space-between", marginTop: "1rem"}}>
             <ProgressBtn></ProgressBtn>
-            <ShowProgress></ShowProgress>
+            {/* <ShowProgress></ShowProgress> */}
             <PocketMoneyBtn></PocketMoneyBtn>
-            <AddPocketMoney></AddPocketMoney>
+            {/* <AddPocketMoney></AddPocketMoney> */}
             <MoreInfoBtn></MoreInfoBtn>
-            <ShowMoreInfo></ShowMoreInfo>
+            {/* <ShowMoreInfo></ShowMoreInfo> */}
         </div>
     )
 }
