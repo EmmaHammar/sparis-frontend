@@ -1,25 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, ActivateGoalComplete, GoalComplete } from '../../components/SavingGoal/index';
 
-export default function SavingGoal({ savingGoalExists, showChild, setSavingGoalExists, setShowChild}) {
-
-
-
-
-    console.log(setSavingGoalExists, setShowChild )
-// export default function SavingGoal(props) {
-    // const [savingGoalExists, setSavingGoalExists] = useState(props.savingGoalExists);
-    // const [showChild, setShowChild] = useState(props.showChild);
+    export default function SavingGoal({ savingGoalExists, showChild, setSavingGoalExists, setShowChild}) {
 
     //cb savingGoalExists true
     const changeSavingGoalExists = (newGoal) => {
-        // setSavingGoalExists(true); 
 
-        //add newGoal to showChild state
-        // let updatedShowChild = {...showChild};
-        // updatedShowChild = newGoal;
-        // setShowChild(updatedShowChild); 
+        // rerender and show newGoal: 
+        setSavingGoalExists(true); 
+
+        // add newGoal to showChild state
+        let updatedShowChild = {...showChild};
+        updatedShowChild = newGoal;
+        setShowChild(updatedShowChild); 
     };
 
     return (
