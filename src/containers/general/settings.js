@@ -1,15 +1,25 @@
-import React from 'react'
-
+import {useState} from 'react'
+import { useNavigate } from "react-router-dom";
 import { DropDown, LogOut, AddUser } from '../../components/Settings'
 
 export default function Settings() {
+
+    const [show, setShow] = useState(false)
+    let navigate = useNavigate();
+
+    const update = (newState) => {
+        setShow(newState)
+    }
+
     return (
-        <div style={{ border: "1px solid red" }}>
-            <h3>Settings</h3>
-            <DropDown></DropDown>
-            <LogOut></LogOut>
-            <AddUser></AddUser>
-        </div>
+        <>
+            <DropDown 
+                show={show} update={update} >
+                {show ? <AddUser/> : ""}
+                {show ? <LogOut /> : ""}
+            </DropDown>
+            
+        </>
     )
 }
 

@@ -19,7 +19,7 @@ function App() {
 
     // {isloading ? <Loader /> :
     // }
-    <>
+    <div style={{ maxWidth: "375px", outline: "1px solid black", display:"flex", justifyContent: "center", padding: " 0.5rem 0rem", margin: "30px auto"}}>
       {/* Add Loader later when testing finish */}
         <Router>
           <Routes>
@@ -28,7 +28,7 @@ function App() {
             <Route exact path="/adults" element={<Adults />} />
           </Routes>
         </Router>
-    </>
+    </div>
 
   );
 }

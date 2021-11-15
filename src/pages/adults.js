@@ -3,6 +3,7 @@ import NavFooter from '../containers/general/navFooter';
 import Settings from '../containers/general/settings';
 import TotalSavings from '../containers/general/totalSavings';
 import SavingGoal from '../containers/general/savingGoal';
+import { TabHeader, ShowChild } from '../components/tabHeader'
 import { useLocation } from "react-router-dom";
 
 export default function Adults() {
@@ -53,8 +54,10 @@ export default function Adults() {
              <Settings />
 
                 {/* prints childBtns: */}
+
+            <TabHeader>
             {dbChildren.map((child, index) =>
-                <button
+                <ShowChild
                     id={child.childId}
                     key={index}
                     value={child.userName}
@@ -63,8 +66,10 @@ export default function Adults() {
 
                     {child.userName}
 
-                </button>
+                </ShowChild>
             )}
+
+            </TabHeader>
 
             {showChildProfile ?
                 <>
