@@ -2,10 +2,10 @@ import { useState } from 'react'
 import styles from './DropDown.module.scss'
 import logo from '../../../images/settings.svg'
 
-export default function DropDown({ show, update, children }) {
+
+export default function DropDown({ show, update, children, ...restProps }) {
 
     const callBack = () => {
-
         update(!show)
     }
 
@@ -14,7 +14,7 @@ export default function DropDown({ show, update, children }) {
 
             <div className={styles.icon}>
                 <img src={logo} className={styles.App} alt="logo" onClick={callBack} />
-            </div>
+            
 
             {show ? 
                 <div className={styles.content}>
@@ -23,6 +23,8 @@ export default function DropDown({ show, update, children }) {
                     </div>
                 </div>
             :""}
+
+            </div>
 
         </div>
     )
