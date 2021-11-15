@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from './GoalComplete.module.scss'
 import Confetti from './index';
 
-export default function GoalComplete() {
+export default function GoalComplete({isFinish}) {
   const [showConfetti, setShowConfetti] = useState(false);
   const [streamAnimation, toggleStreamAnimation] = useState(true);
 
@@ -11,7 +11,13 @@ export default function GoalComplete() {
     <div className={styles.wrapper}>
       <h3>GoalComplete</h3>
 
-      <button className={styles.celebrateBtn} onClick={() => setShowConfetti(!showConfetti)}>Fira med Sparis</button>
+      {( isFinish==false)? 
+           <button className={styles.inActiveCelebrateBtn} onClick={() => setShowConfetti(!showConfetti)} disabled={true}>KLar</button>
+
+     :
+           <button className={styles.celebrateBtn} onClick={() => setShowConfetti(!showConfetti)} >KLar</button>
+
+     }
 
       {showConfetti && (
         <div style={{ display: "flex", "justifyContent": "space-between" }}>
