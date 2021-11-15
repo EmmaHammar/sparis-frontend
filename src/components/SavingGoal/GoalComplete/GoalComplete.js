@@ -1,31 +1,73 @@
 import React from 'react'
-import { useState } from 'react';
 import styles from './GoalComplete.module.scss'
-import Confetti from './index';
+import ReactCanvasConfetti from 'react-canvas-confetti';
 
-export default function GoalComplete() {
-  const [showConfetti, setShowConfetti] = useState(false);
-  const [streamAnimation, toggleStreamAnimation] = useState(true);
+const canvasStyles = {
+  position: 'fixed',
+  pointerEvents: 'none',
+  width: '100%',
+  height: '100%',
+  top: 0,
+  left: 0
+}
 
-  return (
-    <div className={styles.wrapper}>
-      <h3>GoalComplete</h3>
+export default class GoalComplete extends React.Component {
+  constructor(props) {
+    super(props);
+    this.animationInstance = null;
+  }
 
-      <button className={styles.celebrateBtn} onClick={() => setShowConfetti(!showConfetti)}>Fira med Sparis</button>
+  makeShot = (particleRatio, opts) => {
+    this.animationInstance && this.animationInstance({
+      ...opts,
+      origin: { y: 0.7 },
+      particleCount: Math.floor(200 * particleRatio),
+    });
+  }
 
-      {showConfetti && (
-        <div style={{ display: "flex", "justifyContent": "space-between" }}>
-            
-          <div style={{ width: "100%", height: "100%"}}>
-             <Confetti
-              options={{ count: 50, timeout: 5000 }}
-              streamAnimation={streamAnimation}
-            />
-            <button className={styles.startBtn} onClick={() => toggleStreamAnimation(true)}>start</button>
-            <button className={styles.stopBtn} onClick={() => toggleStreamAnimation(false)}>stop</button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+  fire = () => {
+    this.makeShot(0.25, {
+      spread: 26,
+      startVelocity: 55,
+    });
+
+    this.makeShot(0.2, {
+      spread: 60,
+    });
+
+    this.makeShot(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8,
+    });
+
+    this.makeShot(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2,
+    });
+
+    this.makeShot(0.1, {
+      spread: 120,
+      startVelocity: 45,
+    });
+  }
+
+  handlerFire = () => {
+    this.fire();
+  };
+
+  getInstance = (instance) => {
+    this.animationInstance = instance;
+  };
+
+  render() {
+    return (
+      <div>
+        <button className={styles.celebrateBtn} onClick={this.handlerFire}>Klar</button>
+        <ReactCanvasConfetti refConfetti={this.getInstance} style={canvasStyles}/>
+      </div>
+    );
+  }
 }
