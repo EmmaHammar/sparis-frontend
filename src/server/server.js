@@ -16,3 +16,18 @@ export async function logInUser(username, password ) {
 
     return users
 }
+export async function changeSavingGoalInDB(newGoal ) {
+
+    console.log('newGoal from server',newGoal);
+      const response = await fetch('http://localhost:3000/change/addSavingGoal/', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+
+        },
+        body: JSON.stringify(newGoal)
+    })
+ const changes = await response.json();
+
+    return changes
+}

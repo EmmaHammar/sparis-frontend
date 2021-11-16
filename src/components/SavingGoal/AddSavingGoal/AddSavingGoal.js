@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './AddSavingGoal.module.scss';
+import {changeSavingGoalInDB} from "../../../server/server"
 
 export default function AddSavingGoal(props) {
 
@@ -21,7 +22,6 @@ export default function AddSavingGoal(props) {
         newGoal.goalTitle = newGoalTitle;
         newGoal.goalAmount = newGoalAmount;
         newGoal.goalPic = newGoalPic;
-
         //validate input
         if (newGoalTitle !== "" && newGoalAmount !== null && newGoalPic !== "") {
 
@@ -30,6 +30,7 @@ export default function AddSavingGoal(props) {
 
             //save newGoal to db 
             console.log("save newGoal to db:", newGoal);
+            changeSavingGoalInDB( newGoal)
 
         } else {
             setShowErrorMsg(true);
