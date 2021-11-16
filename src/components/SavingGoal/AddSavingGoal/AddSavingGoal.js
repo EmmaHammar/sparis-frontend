@@ -35,11 +35,7 @@ export default function AddSavingGoal(props) {
             setShowErrorMsg(true);
         };
     };
-    const newShowChildInfo=(newGoal)=>{
-        console.log(newGoal);
-      return newGoal
-      
-    }
+  
     const onChange = (evt) => {
 
         if (evt.target.id === "goalTitle") {

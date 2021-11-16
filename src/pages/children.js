@@ -10,7 +10,7 @@ export default function Children() {
     const [savingGoalExists, setSavingGoalExists] = useState(false);
     const location = useLocation();
     const [balance, setBalance] = useState(Number);
-
+    const [isChild,setIschild]=useState(true)
     useEffect(() => {
         //Data from Db
         const dbData = location.state;    
@@ -40,7 +40,7 @@ export default function Children() {
             <h3>Välkomen {showChild.userName}</h3>
             <Settings />
             <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists}  />
-            <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} />
+            <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} isChild={isChild}/>
             <NavFooter />
         </div>
     )
