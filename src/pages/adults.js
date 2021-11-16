@@ -16,6 +16,7 @@ export default function Adults() {
     const [dbChildren, setChildren] = useState([]);
 
     const location = useLocation();
+    
 
     useEffect(() => {
 
@@ -47,7 +48,7 @@ export default function Adults() {
             setSavingGoalExists(true);
         } else {
             setSavingGoalExists(false);
-        };
+        }
     };
 console.log(balance);  
   return (
@@ -75,7 +76,7 @@ console.log(balance);
 
             {showChildProfile ?
                 <>
-                    <h2>{showChild.userName}</h2>
+                <h2>{showChild.userName}</h2>
                     <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists} balance={balance}/>
                     <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} />
                 </>
