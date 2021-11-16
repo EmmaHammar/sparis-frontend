@@ -49,8 +49,8 @@ export default function Adults() {
             setSavingGoalExists(false);
         };
     };
-
-    return (
+console.log(balance);  
+  return (
         <div id="adultsContainer">
 
              <Settings />
@@ -76,7 +76,7 @@ export default function Adults() {
             {showChildProfile ?
                 <>
                     <h2>{showChild.userName}</h2>
-                    <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists} />
+                    <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists} balance={balance}/>
                     <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} />
                 </>
                 : ""}

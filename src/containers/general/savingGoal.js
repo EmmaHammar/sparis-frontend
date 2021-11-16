@@ -3,7 +3,7 @@ import React , {useState} from 'react';
 import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, ActivateGoalComplete, GoalComplete } from '../../components/SavingGoal/index';
 
     export default function SavingGoal({ savingGoalExists, showChild, setSavingGoalExists, setShowChild, newShowChildInfo
-    }) {
+    ,setChangePage ,balance}) {
         const[isFinish,setIsFinish]=useState(false)
 
     //cb savingGoalExists true
@@ -24,12 +24,12 @@ import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, Activate
                 <>
                     <ShowSavingGoal showChild={showChild}></ShowSavingGoal>
                     <DeleteSavingGoal></DeleteSavingGoal>
-                    <ActivateGoalComplete showChild={showChild} isFinish={isFinish} setIsFinish={setIsFinish} ></ActivateGoalComplete>
+                    <ActivateGoalComplete showChild={showChild} isFinish={isFinish} setIsFinish={setIsFinish} balance={balance}></ActivateGoalComplete>
                     <GoalComplete isFinish={isFinish} setIsFinish={setIsFinish} ></GoalComplete>
                 </> : 
                 <>
                     <NoSavingGoal></NoSavingGoal> 
-                    <AddSavingGoal showChild={showChild} changeSavingGoalExists={changeSavingGoalExists} ></AddSavingGoal> 
+                    <AddSavingGoal showChild={showChild} changeSavingGoalExists={changeSavingGoalExists}setChangePage={setChangePage}  ></AddSavingGoal> 
                 </>
             }
 

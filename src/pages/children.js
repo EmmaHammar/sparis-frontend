@@ -4,23 +4,21 @@ import SavingGoal from '../containers/general/savingGoal';
 import Settings from '../containers/general/settings';
 import TotalSavings from '../containers/general/totalSavings';
 import { useLocation } from "react-router-dom";
-export default function Children() {
+export default function Children({changePage,setChangePage}) {
 
     const [showChild, setShowChild] = useState("");
     const [savingGoalExists, setSavingGoalExists] = useState(false);
     const location = useLocation();
     const [balance, setBalance] = useState(Number);
-    const [isChild,setIschild]=useState(true)
+    const [isChild,setIschild]=useState(true);
     useEffect(() => {
         //Data from Db
-        const dbData = location.state;    
-        setShowChild(dbData.child);
-        console.log("error showChild hämtas inte alltid fr db:", showChild);
+        const dbData = location.state; 
+         setShowChild(dbData.child);
         
     }, []);
     
-    
-
+   
     //set balance state
     useEffect(() => {
         if (showChild.goalAmount !== "") {
