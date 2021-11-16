@@ -2,7 +2,8 @@ import React , {useState} from 'react';
 
 import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, ActivateGoalComplete, GoalComplete } from '../../components/SavingGoal/index';
 
-    export default function SavingGoal({ savingGoalExists, showChild, setSavingGoalExists, setShowChild}) {
+    export default function SavingGoal({ savingGoalExists, showChild, setSavingGoalExists, setShowChild, newShowChildInfo
+    }) {
         const[isFinish,setIsFinish]=useState(false)
 
     //cb savingGoalExists true
@@ -28,9 +29,10 @@ import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, Activate
                 </> : 
                 <>
                     <NoSavingGoal></NoSavingGoal> 
-                    <AddSavingGoal showChild={showChild} changeSavingGoalExists={changeSavingGoalExists}></AddSavingGoal> 
+                    <AddSavingGoal showChild={showChild} changeSavingGoalExists={changeSavingGoalExists} ></AddSavingGoal> 
                 </>
             }
+
 
         </div>
     )

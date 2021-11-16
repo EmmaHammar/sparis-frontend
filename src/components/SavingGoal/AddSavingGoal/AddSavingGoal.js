@@ -10,10 +10,10 @@ export default function AddSavingGoal(props) {
     const [newGoalAmount, setNewGoalAmount] = useState(Number);
     const [newGoalPic, setNewGoalPic] = useState("");
     const [showErrorMsg, setShowErrorMsg] = useState(false);
-
     const onClick = () => {
         setShowForm(true);
     };
+   
 
     const onSubmit = (evt) => {
         evt.preventDefault();
@@ -31,12 +31,15 @@ export default function AddSavingGoal(props) {
             //save newGoal to db 
             console.log("save newGoal to db:", newGoal);
             changeSavingGoalInDB( newGoal)
-
         } else {
             setShowErrorMsg(true);
         };
     };
-
+    const newShowChildInfo=(newGoal)=>{
+        console.log(newGoal);
+      return newGoal
+      
+    }
     const onChange = (evt) => {
 
         if (evt.target.id === "goalTitle") {

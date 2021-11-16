@@ -6,7 +6,7 @@ export default function LogOut({...restProps}) {
     
     return (
         <div className={styles.wrapper}  >
-            <p>Logga ut</p>
+            <a className={styles.logOut} href="http://localhost:3001/">Logga ut</a>
 
         </div>
     )
