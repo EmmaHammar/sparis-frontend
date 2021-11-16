@@ -18,11 +18,11 @@ import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, Activate
     };
 
     return (
-        <div style={{ border: "1px solid red" }} id="savingGoalContainer">
+        <div id="savingGoalContainer">
             {savingGoalExists ? 
                 <>
                     <ShowSavingGoal showChild={showChild}></ShowSavingGoal>
-                    <DeleteSavingGoal></DeleteSavingGoal>
+                    
                     <ActivateGoalComplete showChild={showChild} isFinish={isFinish} setIsFinish={setIsFinish} ></ActivateGoalComplete>
                     <GoalComplete isFinish={isFinish} setIsFinish={setIsFinish} ></GoalComplete>
                 </> : 
