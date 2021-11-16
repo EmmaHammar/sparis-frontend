@@ -31,3 +31,17 @@ export async function changeSavingGoalInDB(newGoal ) {
 
     return changes
 }
+
+export async function changeBalanceInDB(changeNewBalance) {
+    
+    const response = await fetch('http://localhost:3000/change/changeBalance/', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(changeNewBalance)
+    })
+    const changes = await response.json();
+    return changes
+
+}

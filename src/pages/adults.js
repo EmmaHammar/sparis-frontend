@@ -25,6 +25,8 @@ export default function Adults() {
         setParent(dbData.parent[0]);
         setChildren(dbData.children);
 
+        console.log("balance from parent");
+
     }, [])
 
     const handleClick = (evt) => {
