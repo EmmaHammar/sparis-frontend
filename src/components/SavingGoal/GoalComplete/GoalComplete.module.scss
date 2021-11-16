@@ -1,7 +1,15 @@
 .wrapper{
     outline: 1px solid orange;
 }
-
+.inActiveCelebrateBtn{
+    padding: 15px;
+    background: #aaecc6;
+    color: white;
+    margin: 25px;
+    border-style: none;
+    border-radius: 7px;
+    font-size: 16px;
+}
 .celebrateBtn {
     width: 80px;
     padding: 15px;

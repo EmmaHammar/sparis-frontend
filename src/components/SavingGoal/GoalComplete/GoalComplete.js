@@ -15,6 +15,9 @@ export default class GoalComplete extends React.Component {
   constructor(props) {
     super(props);
     this.animationInstance = null;
+    this.state = {
+      isFinish: false,
+    };
   }
 
   makeShot = (particleRatio, opts) => {
@@ -65,7 +68,8 @@ export default class GoalComplete extends React.Component {
   render() {
     return (
       <div>
-        <button className={styles.celebrateBtn} onClick={this.handlerFire}>Klar</button>
+         {( this.props.isFinish==false)? 
+        <button className={styles.inActiveCelebrateBtn} onClick={this.handlerFire} disabled={true}>Klar</button> : <button className={styles.celebrateBtn} onClick={this.handlerFire} >Klar</button>}
         <ReactCanvasConfetti refConfetti={this.getInstance} style={canvasStyles}/>
       </div>
     );
