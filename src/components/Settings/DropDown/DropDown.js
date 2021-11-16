@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styles from './DropDown.module.scss'
 import logo from '../../../images/settings.svg'
 

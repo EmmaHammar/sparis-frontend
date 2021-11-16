@@ -67,9 +67,20 @@ export default class GoalComplete extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.wrapper} >
          {( this.props.isFinish==false)? 
-        <button className={styles.inActiveCelebrateBtn} onClick={this.handlerFire} disabled={true}>Klar</button> : <button className={styles.celebrateBtn} onClick={this.handlerFire} >Klar</button>}
+       
+        <button className={styles.inActiveCelebrateBtn} 
+          onClick={this.handlerFire} 
+          disabled={true}>
+          Klar
+        </button> : 
+        
+        <button className={styles.celebrateBtn} 
+          onClick={this.handlerFire}>
+          Klar
+        </button>}
+
         <ReactCanvasConfetti refConfetti={this.getInstance} style={canvasStyles}/>
       </div>
     );
