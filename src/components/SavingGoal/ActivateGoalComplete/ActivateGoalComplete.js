@@ -5,11 +5,7 @@ export default function ActivateGoalComplete({ showChild, isFinish,setIsFinish,b
 
     return (
         <div className={styles.wrapper}>
-         {(showChild.balance)>=(showChild.goalAmount)?
-         setIsFinish(true)
-         :
-        setIsFinish(false)
-        }
+        
          {(balance)>=(showChild.goalAmount)?
          setIsFinish(true)
          :

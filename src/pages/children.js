@@ -37,7 +37,7 @@ export default function Children({changePage,setChangePage}) {
         <div>
             <h3>Välkomen {showChild.userName}</h3>
             <Settings />
-            <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists}  />
+            <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists}  balance={balance}/>
             <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} isChild={isChild}/>
             <NavFooter />
         </div>
