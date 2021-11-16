@@ -1,16 +1,20 @@
 import { useState } from 'react'
 import styles from './ChangeTotalSavings.module.scss'
+import { changeBalanceInDB } from '../../../server/server';
 
-export default function ChangeTotalSavings({balance, setBalance}) {
+export default function ChangeTotalSavings({balance, setBalance, showChild}) {
 
     const [inputAmount, setInputAmount] = useState(Number);
+    // console.log("showChild", showChild);
 
     const decreaseBtn = (e) => {
         e.preventDefault();
 
-        let newBalance = balance - inputAmount;
-        console.log("newBalance", newBalance);
+        let changeNewBalance = {...showChild}
+        let newBalance = balance - Number(inputAmount);
+        changeNewBalance.balance = newBalance
         setBalance(newBalance);
+        changeBalanceInDB(changeNewBalance);
     }
 
     //Add newBalance to DB
@@ -18,9 +22,11 @@ export default function ChangeTotalSavings({balance, setBalance}) {
     const increaseBtn = (e) => {
         e.preventDefault();
 
+        let changeNewBalance = {...showChild}
         let newBalance = balance + Number(inputAmount);
-        console.log("newBalance", newBalance);
+        changeNewBalance.balance = newBalance
         setBalance(newBalance);
+        changeBalanceInDB(changeNewBalance);
 
     }
 
