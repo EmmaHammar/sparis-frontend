@@ -4,7 +4,6 @@ import ShowProgress from '../ShowProgress/ShowProgress'
 
 export default function ProgressBtn({balance, showChild}) {
 
-
     const [toggle, setToggle] = useState(false)
 
     return (
