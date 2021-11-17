@@ -29,6 +29,7 @@ export default function ChangeTotalSavings({balance, setBalance, showChild}) {
         changeBalanceInDB(changeNewBalance);
 
     }
+    console.log('balance from change total saving',balance);
 
     //Add newBalance to DB
         

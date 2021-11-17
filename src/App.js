@@ -6,6 +6,7 @@ import Children from './pages/children';
 import Home from './pages/home';
 
 function App() {
+  const[changePage,setChangePage]=useState(false)
 
   const [isloading, setIsLoading] = useState(true)
 
@@ -23,8 +24,8 @@ function App() {
       {/* Add Loader later when testing finish */}
         <Router>
           <Routes>
-            <Route exact path="/" element={<Home/>} />
-            <Route exact path="/children" element={<Children />} />
+            <Route exact path="/" element={<Home/>} /> 
+            <Route exact path="/children" element={<Children setChangePage={setChangePage} changePage={changePage} />} />
             <Route exact path="/adults" element={<Adults />} />
           </Routes>
         </Router>
