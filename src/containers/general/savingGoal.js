@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 
-import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, GoalComplete } from '../../components/SavingGoal/index';
+import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, ActivateGoalComplete, GoalComplete } from '../../components/SavingGoal/index';
+import styles from './savingGoals.module.scss';
 
     export default function SavingGoal({ savingGoalExists, showChild, setSavingGoalExists, setShowChild
     ,setChangePage ,balance}) {
@@ -34,7 +35,7 @@ import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, GoalComplete } from '../..
     console.log(savingGoalExists)
 
     return (
-        <div id="savingGoalContainer">
+        <div className={styles.wrapper} id="savingGoalContainer">
             {savingGoalExists ? 
                 <>
                     <ShowSavingGoal showChild={showChild}></ShowSavingGoal>

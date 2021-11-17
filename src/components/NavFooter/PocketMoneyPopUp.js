@@ -6,7 +6,7 @@ function PocketMoneyPopUp(props) {
     return (props.trigger) ? (
         <div className={styles.popup}>
             <div className={styles.popupInner}>
-                <button className={styles.popupCloseBtn} onClick={() => props.setTrigger(false)}>Stäng</button>
+                <button className={styles.popupCloseBtn} onClick={() => props.setTrigger(false)}>x</button>
                 <h2>Ställ in veckopeng med en automatisk överföring varje vecka.</h2>
                 <form className={styles.popUpForm}>
                    

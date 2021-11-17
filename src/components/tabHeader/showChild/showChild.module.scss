@@ -1,9 +1,10 @@
 .wrapper{
-
     border: 1px solid black;
     border-top-right-radius: 20px;
     padding: 1rem 2rem;
     font-family: monospace;
+    position: relative;
+    bottom: 20px;
 
     &:hover {
         cursor: pointer;
