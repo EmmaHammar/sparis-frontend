@@ -1,7 +1,7 @@
 ## Frameworks used in project:
 React https://reactjs.org/
 
-SCSS https://sass-lang.com/install
+SASS https://sass-lang.com/install
 
 ## API
 React Canvas Confetti https://www.npmjs.com/package/react-canvas-confetti
