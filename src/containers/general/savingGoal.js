@@ -1,10 +1,23 @@
-import React , {useState} from 'react';
+import {useState, useEffect} from 'react';
 
-import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, ActivateGoalComplete, GoalComplete } from '../../components/SavingGoal/index';
+import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, GoalComplete } from '../../components/SavingGoal/index';
 
-    export default function SavingGoal({ savingGoalExists, showChild, setSavingGoalExists, setShowChild, newShowChildInfo
+    export default function SavingGoal({ savingGoalExists, showChild, setSavingGoalExists, setShowChild
     ,setChangePage ,balance}) {
-        const[isFinish,setIsFinish]=useState(false)
+                
+        const[isFinish, setIsFinish]=useState(false)
+
+    useEffect(() => {
+        //checkGoalComplete
+        if( balance >= showChild.goalAmount ){
+
+            setIsFinish(true)
+        } else {
+
+            setIsFinish(false)
+        }
+
+    }, [balance, showChild])
 
     //cb savingGoalExists true
     const changeSavingGoalExists = (newGoal) => {
@@ -23,17 +36,13 @@ import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, DeleteSavingGoal, Activate
             {savingGoalExists ? 
                 <>
                     <ShowSavingGoal showChild={showChild}></ShowSavingGoal>
-                    
-                    <ActivateGoalComplete showChild={showChild} isFinish={isFinish} setIsFinish={setIsFinish} balance={balance} ></ActivateGoalComplete>
-                    <GoalComplete isFinish={isFinish} setIsFinish={setIsFinish} ></GoalComplete>
+                    <GoalComplete isFinish={isFinish} ></GoalComplete>
                 </> : 
                 <>
                     <NoSavingGoal></NoSavingGoal> 
-                    <AddSavingGoal showChild={showChild} changeSavingGoalExists={changeSavingGoalExists}setChangePage={setChangePage}  ></AddSavingGoal> 
+                    <AddSavingGoal showChild={showChild} changeSavingGoalExists={changeSavingGoalExists}setChangePage={setChangePage}></AddSavingGoal> 
                 </>
             }
-
-
         </div>
     )
 };

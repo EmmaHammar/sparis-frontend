@@ -1,7 +1,6 @@
-import React , {useState}from 'react'
+
 import styles from './ActivateGoalComplete.module.scss'
-export default function ActivateGoalComplete({ showChild, isFinish,setIsFinish,balance}) {
-    {console.log('balance from activate savingGoal',balance)}
+export default function ActivateGoalComplete({ showChild, setIsFinish, balance}) {
 
     return (
         <div className={styles.wrapper}>

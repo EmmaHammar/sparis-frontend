@@ -9,31 +9,48 @@ import { useLocation } from "react-router-dom";
 export default function Adults() {
 
     const [showChild, setShowChild] = useState({});
-    const [showChildProfile, setShowChildProfile] = useState(false)
     const [savingGoalExists, setSavingGoalExists] = useState(false);
-    const [balance, setBalance] = useState(Number);
-    const [parent, setParent] = useState("");
+    const [balance, setBalance] = useState(0);
+    // const [parent, setParent] = useState("");
     const [dbChildren, setChildren] = useState([]);
 
     const location = useLocation();
-    
+
 
     useEffect(() => {
 
         //Data from Db
         const dbData = location.state;
-
-        setParent(dbData.parent[0]);
+       
+        // setParent(dbData.parent[0]);
         setChildren(dbData.children);
 
-        console.log("balance from parent");
+    }, [location])
 
-    }, [])
+    useEffect(() => {
+
+        updateBalance()
+    
+    }, [balance])
+
+
+    const updateBalance = () => {
+       
+        const updateDb = [...dbChildren]
+        const index = updateDb.findIndex( (element) => element._id === showChild._id);
+
+        if(typeof index !== 'undifined' && index >= 0 ){
+
+            updateDb[index].balance = balance
+
+            setChildren(updateDb)
+        }
+    }
+
 
     const handleClick = (evt) => {
 
-        setShowChildProfile(true);
-
+    
         //Save clickedChildInfo:
         const isChildId = (child) => {
             return child.childId == evt.target.id;
@@ -50,39 +67,42 @@ export default function Adults() {
             setSavingGoalExists(false);
         }
     };
-console.log(balance);  
-  return (
+
+
+
+    return (
         <div id="adultsContainer">
 
-             <Settings />
+            <Settings />
 
-                {/* prints childBtns: */}
+            {/* prints childBtns: */}
 
             <TabHeader>
-            {dbChildren.map((child, index) =>
-                <ShowChild
-                    id={child.childId}
-                    key={index}
-                    value={child.userName}
-                    onClick={handleClick}
-                >
+                {dbChildren.map((child, index) =>
+                    <ShowChild
+                        id={child.childId}
+                        key={index}
+                        value={child.userName}
+                        onClick={handleClick}
+                    >
 
-                    {child.userName}
+                        {child.userName}
 
-                </ShowChild>
-            )}
+                    </ShowChild>
+                )}
 
             </TabHeader>
 
-            {showChildProfile ?
-                <>
-                <h2>{showChild.userName}</h2>
-                    <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists} balance={balance}/>
-                    <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} />
-                </>
-                : ""}
 
-            <NavFooter /> 
+            <>
+                <h2>{showChild.userName}</h2>
+                <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists} balance={balance} />
+
+                <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} />
+            </>
+
+
+            <NavFooter />
 
         </div>
     )

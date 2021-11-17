@@ -7,8 +7,6 @@ export default function ProgressBtn() {
 
     const [toggle, setToggle] = useState(false)
 
-    
-    console.log(toggle)
     return (
         <div className={styles.wrapper}>
             <button className={styles.navBtn} onClick={() => setToggle(!toggle)} >Progress</button>

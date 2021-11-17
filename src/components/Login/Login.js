@@ -26,13 +26,13 @@ export default function Login() {
     //If data
     if (dbData) {
 
-      if (dbData.type == "parent") {
+      if (dbData.type === "parent") {
 
         navigate('/adults', {state: dbData})
 
       }
 
-      if (dbData.type == "child") {
+      if (dbData.type === "child") {
 
         navigate('/children', {state: dbData})
       }

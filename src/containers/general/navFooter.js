@@ -1,16 +1,13 @@
 import React from 'react'
 
-import { ProgressBtn, ShowProgress, PocketMoneyBtn, AddPocketMoney, MoreInfoBtn, ShowMoreInfo } from '../../components/NavFooter/index'
+import { ProgressBtn, PocketMoneyBtn, MoreInfoBtn } from '../../components/NavFooter/index'
 
-export default function NavFooter() {
+export default function NavFooter({noShow}) {
     return (
-        <div style={{ display: "flex", justifyContent: "space-between", marginTop: "1rem"}}>
+        <div style={{ display: "flex", justifyContent: "space-between", gap: "1rem", margin: "1rem"}}>
             <ProgressBtn></ProgressBtn>
-            {/* <ShowProgress></ShowProgress> */}
-            <PocketMoneyBtn></PocketMoneyBtn>
-            {/* <AddPocketMoney></AddPocketMoney> */}
+            { noShow ? <PocketMoneyBtn></PocketMoneyBtn> : ""}
             <MoreInfoBtn></MoreInfoBtn>
-            {/* <ShowMoreInfo></ShowMoreInfo> */}
         </div>
     )
 }
