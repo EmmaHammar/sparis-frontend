@@ -74,7 +74,7 @@ export default function Login() {
           {/* Submit button */}
           {errorMsg ? <span>{errorMsg}</span> : ""}
           <div className={styles.buttonContainer}>
-            <input type="submit" className={styles.submitButton} />
+            <button type="submit" className={styles.submitButton}> Skicka </button>
           </div>
         </form>
       </div>

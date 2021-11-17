@@ -13,7 +13,7 @@ function PocketMoneyPopUp(props) {
                         <input/>
                         <label> kr</label>
                     <br/><br/>
-                    <button className={styles.popUpFormBtn}>Lägg till veckopeng</button>
+                    <button disabled className={styles.popUpFormBtn}>Lägg till veckopeng</button>
                 </form>
                 { props.children }
             </div>         
