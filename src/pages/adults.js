@@ -5,6 +5,7 @@ import TotalSavings from '../containers/general/totalSavings';
 import SavingGoal from '../containers/general/savingGoal';
 import { TabHeader, ShowChild } from '../components/tabHeader'
 import { useLocation } from "react-router-dom";
+import styles from '../pages/adults.module.scss';
 
 export default function Adults() {
 
@@ -31,6 +32,7 @@ export default function Adults() {
     }, [])
 
     const handleClick = (evt) => {
+        
 
         setShowChildProfile(true);
 
@@ -76,7 +78,7 @@ console.log(balance);
 
             {showChildProfile ?
                 <>
-                <h2>{showChild.userName}</h2>
+                <h2 className={styles.child}>{showChild.userName}</h2>
                     <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists} balance={balance}/>
                     <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} />
                 </>
