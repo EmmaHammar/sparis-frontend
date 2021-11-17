@@ -11,7 +11,7 @@ export default function ChangeTotalSavings({balance, setBalance, showChild}) {
         e.preventDefault();
 
         let changeNewBalance = {...showChild}
-        let newBalance = balance - Number(inputAmount);
+        let newBalance = balance - inputAmount
         changeNewBalance.balance = newBalance
         setBalance(newBalance);
         changeBalanceInDB(changeNewBalance);
@@ -26,10 +26,12 @@ export default function ChangeTotalSavings({balance, setBalance, showChild}) {
         let newBalance = balance + Number(inputAmount);
         changeNewBalance.balance = newBalance
         setBalance(newBalance);
+       
+       
+       
         changeBalanceInDB(changeNewBalance);
 
     }
-    console.log('balance from change total saving',balance);
 
     //Add newBalance to DB
         

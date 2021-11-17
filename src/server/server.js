@@ -16,6 +16,7 @@ export async function logInUser(username, password ) {
 
     return users
 }
+
 export async function changeSavingGoalInDB(newGoal ) {
 
     console.log('newGoal from server',newGoal);

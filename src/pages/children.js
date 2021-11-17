@@ -27,19 +27,18 @@ export default function Children({changePage,setChangePage}) {
             setSavingGoalExists(false);
         };
         setBalance(showChild.balance)
-        console.log(showChild.balance);
-        console.log(balance);
+  
    }, [showChild]); 
 
  
     return (
        
         <div>
-            <h3>Välkomen {showChild.userName}</h3>
             <Settings />
+            <h3>Välkomen {showChild.userName}</h3>
             <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists}  balance={balance}/>
             <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} isChild={isChild}/>
-            <NavFooter />
+            <NavFooter noShow={false}/>
         </div>
     )
 };

@@ -15,9 +15,9 @@ export default class GoalComplete extends React.Component {
   constructor(props) {
     super(props);
     this.animationInstance = null;
-    this.state = {
-      isFinish: false,
-    };
+    // this.state = {
+    //   isFinish: false,
+    // };
   }
 
   makeShot = (particleRatio, opts) => {
@@ -68,7 +68,7 @@ export default class GoalComplete extends React.Component {
   render() {
     return (
       <div className={styles.wrapper} >
-         {( this.props.isFinish==false)? 
+         {( this.props.isFinish===false)? 
        
         <button className={styles.inActiveCelebrateBtn} 
           onClick={this.handlerFire} 
