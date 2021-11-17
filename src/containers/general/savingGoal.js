@@ -31,6 +31,8 @@ import { NoSavingGoal, AddSavingGoal, ShowSavingGoal, GoalComplete } from '../..
         setShowChild(updatedShowChild); 
     };
 
+    console.log(savingGoalExists)
+
     return (
         <div id="savingGoalContainer">
             {savingGoalExists ? 

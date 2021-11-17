@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 export default function Adults() {
 
     const [showChild, setShowChild] = useState({});
-    const [savingGoalExists, setSavingGoalExists] = useState(false);
+    const [savingGoalExists, setSavingGoalExists] = useState(true);
     const [balance, setBalance] = useState(0);
     // const [parent, setParent] = useState("");
     const [dbChildren, setChildren] = useState([]);
@@ -39,7 +39,7 @@ export default function Adults() {
         const updateDb = [...dbChildren]
         const index = updateDb.findIndex( (element) => element._id === showChild._id);
 
-        if(typeof index !== 'undifined' && index >= 0 ){
+        if(typeof index !== 'undefined' && index >= 0 ){
 
             updateDb[index].balance = balance
 
@@ -49,7 +49,6 @@ export default function Adults() {
 
 
     const handleClick = (evt) => {
-
     
         //Save clickedChildInfo:
         const isChildId = (child) => {
