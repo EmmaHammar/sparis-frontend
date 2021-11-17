@@ -1,10 +1,17 @@
+## About the project:
+
+Sparis is a digital piggy bank where parents can give their children an allowance. It also itroduces younger children to the concept of what money is and its value. Children can add saving goals, like a certain toy they want, and they will get a visual representation of how much they need to save to reach their goal and the progress they're making.
+
+
 ## Frameworks used in project:
 React https://reactjs.org/
 
 SASS https://sass-lang.com/install
 
-## API
 React Canvas Confetti https://www.npmjs.com/package/react-canvas-confetti
+
+## API
+TBD
 
 ## Database
 MongoDB https://www.mongodb.com/
