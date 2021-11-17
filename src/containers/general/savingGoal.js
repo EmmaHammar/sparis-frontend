@@ -32,8 +32,6 @@ import styles from './savingGoals.module.scss';
         setShowChild(updatedShowChild); 
     };
 
-    console.log(savingGoalExists)
-
     return (
         <div className={styles.wrapper} id="savingGoalContainer">
             {savingGoalExists ? 

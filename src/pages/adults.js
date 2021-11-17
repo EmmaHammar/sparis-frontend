@@ -5,7 +5,6 @@ import TotalSavings from '../containers/general/totalSavings';
 import SavingGoal from '../containers/general/savingGoal';
 import { TabHeader, ShowChild } from '../components/tabHeader'
 import { useLocation } from "react-router-dom";
-import styles from '../pages/adults.module.scss';
 
 export default function Adults() {
 
@@ -71,7 +70,7 @@ export default function Adults() {
 
 
     return (
-        <div className={styles.wrapper} id="adultsContainer">
+        <div id="adultsContainer">
 
             <Settings />
 
@@ -102,7 +101,7 @@ export default function Adults() {
             </>
 
 
-            <NavFooter noShow={true}/>
+            <NavFooter noShow={true} balance={balance} showChild={showChild}/>
 
         </div>
     )

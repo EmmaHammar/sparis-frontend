@@ -1,18 +1,27 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import styles from './ShowProgress.module.scss'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-export default function ShowProgress({setToggle}) {
+export default function ShowProgress({setToggle, balance, showChild}) {
 
-    const percentage = 66;
+    const [percentage, setstate] = useState(0)
+    
+    useEffect(() => {
+        
+        const calc = (showChild.goalAmount / balance) * 100
+
+        setstate(Math.round(calc))
+
+    }, [balance])
+
+    
+
     return (
         <div className={styles.wrapper}>
             
             <div className={styles.content}>
                 
-
-           
                 <button onClick={() => setToggle(false)}>X</button>
                 
                 <i>Kvar till sparmål</i>
