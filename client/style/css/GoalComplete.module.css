@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  bottom: 40px;
+}
+
+.wrapper .inActiveCelebrateBtn {
+  width: 70px;
+  padding: 12px;
+  background: #aaecc6;
+  color: white;
+  margin: 25px;
+  border-style: none;
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+}
+
+.wrapper .celebrateBtn {
+  width: 70px;
+  padding: 12px;
+  background: #27ae60;
+  color: white;
+  margin: 25px;
+  border-style: none;
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+}
+
+.wrapper .celebrateBtn:hover {
+  background: #1c974f;
+}

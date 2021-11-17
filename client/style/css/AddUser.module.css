@@ -1,0 +1,9 @@
+.wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8rem;
+}
+
+.wrapper p:hover {
+  cursor: pointer;
+  background-color: #e4e4e4;
+}
