@@ -7,7 +7,7 @@ SCSS https://sass-lang.com/install
 React Canvas Confetti https://www.npmjs.com/package/react-canvas-confetti
 
 ## Database
-MongoDB
+MongoDB https://www.mongodb.com/
 
 Backend repo: https://github.com/EmmaHammar/sparis-backend.git
 
