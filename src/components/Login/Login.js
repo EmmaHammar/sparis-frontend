@@ -48,12 +48,12 @@ export default function Login() {
     <div className={styles.app}>
 
       <div className={styles.loginForm}>
-        <div className={styles.title}>Sign In</div>
+        <div className={styles.title}>Logga in</div>
 
         {/* Username input */}
         <form onSubmit={handleSubmit}>
           <div className={styles.inputContainer}>
-            <label>Username </label>
+            <label>Användarnamn </label>
             <input className={styles.inputBox}
               type="text"
               name="userName"
@@ -63,7 +63,7 @@ export default function Login() {
 
           {/* Password input */}
           <div className={styles.inputContainer}>
-            <label>Password </label>
+            <label>Lösenord </label>
             <input
               type="password"
               name="pass" className={styles.inputBox}

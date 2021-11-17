@@ -1,13 +1,17 @@
 .wrapper {
   display: flex;
   justify-content: center;
+  position: relative;
+  bottom: 25px;
+ 
  
   .inputAmount {
     margin: 0.3rem;
     font-size: 15px;
-    max-width: 10rem;
+    max-width: 9rem;
     border-radius: 6px;
     border-color: #dddddd;
+
   }
   .button {
     background-color: #27ae60;
