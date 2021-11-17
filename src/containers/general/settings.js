@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import { DropDown, LogOut, AddUser } from '../../components/Settings'
 
-export default function Settings() {
+export default function Settings({noShow}) {
 
     const [show, setShow] = useState(false)
   
@@ -13,7 +13,7 @@ export default function Settings() {
         <>
             <DropDown 
                 show={show} update={update} >
-                {show ? <AddUser/> : ""}
+                {show && noShow ? <AddUser/> : ""}
                 {show ? <LogOut /> : ""}
             </DropDown>
             

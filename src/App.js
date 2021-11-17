@@ -13,13 +13,14 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false)
-    }, 10)
+    }, 2000)
   })
 
   return (
 
-    // {isloading ? <Loader /> :
-    // }
+    <>
+    {isloading ? <Loader /> : 
+    
     <div style={{ maxWidth: "375px", display:"flex", justifyContent: "center", padding: " 0.5rem 0rem", margin: "30px auto", boxSizing: "none"}}>
       {/* Add Loader later when testing finish */}
         <Router>
@@ -30,7 +31,8 @@ function App() {
           </Routes>
         </Router>
     </div>
-
+  }
+    </>
   );
 }
 

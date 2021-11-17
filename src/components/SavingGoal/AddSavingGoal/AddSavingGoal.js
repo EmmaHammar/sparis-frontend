@@ -63,7 +63,7 @@ export default function AddSavingGoal(props) {
                     </form>
                 </div>
                 :      
-                <button id={styles.printFormBtn} onClick={onClick}>Lägg till sparmål</button>
+                <button className={styles.printFormBtn} onClick={onClick}>Lägg till sparmål</button>
             }
 
             {showErrorMsg ? 

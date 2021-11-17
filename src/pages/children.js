@@ -4,6 +4,8 @@ import SavingGoal from '../containers/general/savingGoal';
 import Settings from '../containers/general/settings';
 import TotalSavings from '../containers/general/totalSavings';
 import { useLocation } from "react-router-dom";
+import Header from '../components/header/header'
+
 export default function Children({changePage,setChangePage}) {
 
     const [showChild, setShowChild] = useState("");
@@ -34,7 +36,8 @@ export default function Children({changePage,setChangePage}) {
     return (
        
         <div>
-            <Settings />
+            <Settings noShow={false} />
+            <Header />
             <h3 style = {{textAlign: 'center', padding: '7px', fontSize: '20px'}}>Välkommen {showChild.userName}</h3>
             <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists}  balance={balance}/>
             <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} isChild={isChild}/>

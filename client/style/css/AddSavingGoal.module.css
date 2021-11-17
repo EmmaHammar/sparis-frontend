@@ -1,5 +1,16 @@
+.wrapper {
+  padding: 1rem;
+}
+
+.wrapper .printFormBtn {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 7rem;
+  outline: 1px solid black;
+}
+
 #addSavingGoalContainer {
-  margin-top: 40px;
+  margin-top: 0px;
 }
 
 #addSavingGoalForm {
@@ -14,4 +25,7 @@ input {
 
 #saveGoalBtn {
   max-width: 100px;
+  border-radius: 7rem;
+  border: none;
+  padding: 0.5rem;
 }

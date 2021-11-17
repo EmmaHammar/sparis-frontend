@@ -1,7 +1,12 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #eebbeb;
-  height: 320px;
+  max-height: 320px;
   border-radius: 20px;
   width: 300px;
   min-width: 300px;
+  padding: 0;
 }
