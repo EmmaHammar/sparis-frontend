@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  bottom: 25px;
+  margin: 0;
+}
+
+.showBalance {
+  font-size: 30px;
+  font-family: 'Secular One', sans-serif;
+  color: #4d4d4d;
+  margin: 0;
+}
+
+.piggy {
+  width: 8rem;
+  margin: 0;
+  position: relative;
+  right: 12px;
+  padding: 0.5rem;
+}

@@ -1,0 +1,17 @@
+#addSavingGoalContainer {
+  margin-top: 40px;
+}
+
+#addSavingGoalForm {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  max-width: 300px;
+}
+
+#saveGoalBtn {
+  max-width: 100px;
+}

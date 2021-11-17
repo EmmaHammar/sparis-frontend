@@ -14,7 +14,7 @@ export default function Adults() {
     const [balance, setBalance] = useState(0);
     // const [parent, setParent] = useState("");
     const [dbChildren, setChildren] = useState([]);
-
+  
     const location = useLocation();
 
     useEffect(() => {
@@ -24,6 +24,8 @@ export default function Adults() {
        
         // setParent(dbData.parent[0]);
         setChildren(dbData.children);
+
+        setShowChild(dbData.children[0])
 
     }, [location])
 
@@ -49,6 +51,8 @@ export default function Adults() {
 
 
     const handleClick = (evt) => {
+
+      
     
         //Save clickedChildInfo:
         const isChildId = (child) => {

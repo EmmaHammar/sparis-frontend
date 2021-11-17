@@ -1,0 +1,13 @@
+.wrapper {
+  border: 1px solid black;
+  border-top-right-radius: 20px;
+  padding: 1rem 2rem;
+  font-family: monospace;
+  position: relative;
+  bottom: 20px;
+}
+
+.wrapper:hover {
+  cursor: pointer;
+  background-color: #e4e4e4;
+}

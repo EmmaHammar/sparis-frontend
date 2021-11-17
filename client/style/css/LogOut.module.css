@@ -1,0 +1,18 @@
+.wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8rem;
+  border-top: 1px solid black;
+}
+
+.wrapper a {
+  color: black;
+}
+
+.wrapper p:hover {
+  cursor: pointer;
+  background-color: #e4e4e4;
+}
+
+.logOut {
+  text-decoration: none;
+}
