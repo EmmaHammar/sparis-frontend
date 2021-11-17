@@ -102,7 +102,7 @@ export default function Adults() {
             </>
 
 
-            <NavFooter />
+            <NavFooter noShow={true}/>
 
         </div>
     )
