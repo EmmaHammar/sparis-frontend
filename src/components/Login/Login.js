@@ -13,8 +13,8 @@ export default function Login() {
   const [inputPassword, setInputPassword] = useState("");
 
   const errors = {
-    uname: "invalid",
-    pass: "invalid password",
+    uname: "Ogiltigt",
+    pass: "Ogiltigt lösenord",
   };
 
   const handleSubmit = async (event) => {
