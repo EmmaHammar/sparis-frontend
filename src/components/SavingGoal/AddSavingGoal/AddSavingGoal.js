@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import styles from './AddSavingGoal.module.scss';
 import {changeSavingGoalInDB} from "../../../server/server"
 
 export default function AddSavingGoal(props) {
 
-    const [showChild, setShowChild] = useState(props.showChild); 
+    const [showChild] = useState(props.showChild); 
     const [showForm, setShowForm] = useState(false);
     const [newGoalTitle, setNewGoalTitle] = useState("");
     const [newGoalAmount, setNewGoalAmount] = useState(Number);
