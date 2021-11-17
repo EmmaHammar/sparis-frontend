@@ -6,16 +6,25 @@ import 'react-circular-progressbar/dist/styles.css';
 export default function ShowProgress({setToggle, balance, showChild}) {
 
     const [percentage, setstate] = useState(0)
+
+
+    console.log(balance)
+    console.log(showChild.goalAmount)
     
     useEffect(() => {
         
-        const calc = (showChild.goalAmount / balance) * 100
+        const calc = ( balance / showChild.goalAmount ) * 100
+
+        console.log(calc)
 
         setstate(Math.round(calc))
 
+        
+
     }, [balance])
 
-    
+
+    console.log(percentage)
 
     return (
         <div className={styles.wrapper}>
