@@ -16,7 +16,6 @@ export default function Adults() {
 
     const location = useLocation();
 
-
     useEffect(() => {
 
         //Data from Db
