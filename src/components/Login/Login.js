@@ -54,28 +54,29 @@ export default function Login() {
         {/* Username input */}
         <form onSubmit={handleSubmit}>
           <div className={styles.inputContainer}>
-            <label>Användarnamn </label>
             <input className={styles.inputBox}
               type="text"
               name="userName"
               onChange={({ target }) => setInputUserName(target.value)}
+              placeholder="Användarnamn"
             />
           </div>
 
           {/* Password input */}
           <div className={styles.inputContainer}>
-            <label>Lösenord </label>
             <input
               type="password"
               name="pass" className={styles.inputBox}
               onChange={({ target }) => setInputPassword(target.value)}
+              placeholder="Lösenord"
+
             />
           </div>
 
           {/* Submit button */}
           {errorMsg ? <span>{errorMsg}</span> : ""}
           <div className={styles.buttonContainer}>
-            <button type="submit" className={styles.submitButton}> Skicka </button>
+            <button type="submit" className={styles.submitButton}> Logga in </button>
           </div>
         </form>
       </div>
