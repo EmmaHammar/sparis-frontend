@@ -38,19 +38,19 @@ You will also see any lint errors in the console.
 
 ## Log In:
 
-#Adult:
+Adult:
 
 Username: Maria 
 
 Password: testmaria
 
-####Child:
+Child:
 
 Username: Theo
 
 Password: testtheo
 
-#### Devtools:
+## Devtools:
 
 Wiev for iPhone X.
 
