@@ -6,6 +6,21 @@
 Sparis is a digital piggy bank where parents can give their children an allowance. It also itroduces younger children to the concept of what money is and its value. Children can add saving goals, like a certain toy they want, and they will get a visual representation of how much they need to save to reach their goal and the progress they're making.
 
 
+## Log In:
+
+Adult:
+
+Username: maria 
+
+Password: testmaria
+
+Child:
+
+Username: theo
+
+Password: testtheo
+
+
 ## Frameworks used in project:
 React https://reactjs.org/
 
@@ -36,22 +51,21 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-## Log In:
-
-Adult:
-
-Username: Maria 
-
-Password: testmaria
-
-Child:
-
-Username: Theo
-
-Password: testtheo
 
 ## Devtools:
 
-Wiev for iPhone X.
+View for iPhone X.
+
+## Future functions
+
+These are functions we’re about to develop further on:
+* Add pocket money
+* Register new account
+* Add new parent / child
+* Gamification with the progress achieving the saving goal
+* UI/UX
+* Remove saving goal
+
+
 
 
