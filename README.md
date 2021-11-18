@@ -41,13 +41,11 @@ You will also see any lint errors in the console.
 Adult:
 
 Username: Maria 
-
 Password: testmaria
 
 Child:
 
 Username: Theo
-
 Password: testtheo
 
 ## Devtools:
