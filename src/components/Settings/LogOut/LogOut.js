@@ -5,7 +5,7 @@ export default function LogOut({...restProps}) {
     
     return (
         <div className={styles.wrapper}  >
-            <a className={styles.logOut} href="http://localhost:3001/">Logga ut</a>
+            <a className={styles.logOut} href="https://sparis-frontend.herokuapp.com/">Logga ut</a>
 
         </div>
     )
