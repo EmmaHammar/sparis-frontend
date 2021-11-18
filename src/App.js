@@ -19,10 +19,10 @@ function App() {
   return (
 
     <>
-    {isloading ? <Loader /> : 
+    {isloading ? <Loader /> : ""}
     
-    <div style={{ maxWidth: "375px", display:"flex", justifyContent: "center", padding: " 0.5rem 0rem", margin: "30px auto", boxSizing: "none"}}>
-      {/* Add Loader later when testing finish */}
+    <div style={{ maxWidth: "375px", display:"flex", justifyContent: "center", padding: "0rem", margin: "30px auto", boxSizing: "none"}}>
+      
         <Router>
           <Routes>
             <Route exact path="/" element={<Home/>} /> 
@@ -31,7 +31,6 @@ function App() {
           </Routes>
         </Router>
     </div>
-  }
     </>
   );
 }
