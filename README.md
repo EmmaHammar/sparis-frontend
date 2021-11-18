@@ -14,7 +14,7 @@ SASS https://sass-lang.com/install
 React Canvas Confetti https://www.npmjs.com/package/react-canvas-confetti
 
 ## API
-TBD
+GitHub REST API https://docs.github.com/en/rest
 
 ## Database
 MongoDB https://www.mongodb.com/
