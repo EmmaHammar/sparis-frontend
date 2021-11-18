@@ -37,7 +37,11 @@ MongoDB https://www.mongodb.com/
 Backend repo: https://github.com/EmmaHammar/sparis-backend.git
 
 ## Start Project
+Deployed on Heroku:
+Frontend repo: https://sparis-frontend.herokuapp.com/
+Backend repo: https://sparis-backend.herokuapp.com/
 
+Start Project locally:
 Git-clone: https://github.com/EmmaHammar/sparis-frontend.git
 Git-clone: https://github.com/EmmaHammar/sparis-backend.git
 
