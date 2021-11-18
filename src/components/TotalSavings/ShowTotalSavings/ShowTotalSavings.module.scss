@@ -6,21 +6,22 @@
     flex-direction: column;
     position: relative;
     bottom: 25px;
-    margin: 0;
+    margin: 1rem;
 }
 
 .showBalance{
-    font-size: 2.5rem;
+    font-size: 1.4rem;
     font-family: 'Secular One', sans-serif;
-    color: rgb(77, 77, 77);
-    margin-top: 110px;
+    color: rgb(41, 41, 41);
+    margin-top: 3.7rem;
+    margin-left: 0.3rem;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 
 .piggy {
     z-index: 0;
-    width: 14rem;
+    width: 12rem;
     position: relative;
     right: 12px;
     padding-right: 0.5rem;
