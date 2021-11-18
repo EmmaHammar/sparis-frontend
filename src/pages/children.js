@@ -38,7 +38,7 @@ export default function Children({changePage,setChangePage}) {
         <div>
             <Settings noShow={false} />
             <Header />
-            <h3 style = {{textAlign: 'center', padding: '7px', fontSize: '20px'}}>Välkommen {showChild.userName}</h3>
+            <h3 style = {{textAlign: 'center', padding: '7px', fontSize: '1.5rem'}}>Välkommen {showChild.userName}</h3>
             <SavingGoal showChild={showChild} setShowChild={setShowChild} savingGoalExists={savingGoalExists} setSavingGoalExists={setSavingGoalExists}  balance={balance}/>
             <TotalSavings showChild={showChild} balance={balance} setBalance={setBalance} isChild={isChild}/>
             <NavFooter noShow={false} balance={balance} showChild={showChild}/>
